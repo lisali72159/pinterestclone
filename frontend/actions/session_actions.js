@@ -20,10 +20,10 @@ const logoutCurrentUser = user => ({
 });
 
 export const login = user => dispatch =>
-  SessionApiUtil.login(user).then(user => dispatch(receiveCurrentUser(user)));
+  SessionApiUtil.login(user).then(user => dispatch(receiveCurrentUser(user), err => (dispatch(receiveSessionErrors(err.responseJSON)))));
 
 export const logout = () => dispatch =>
   SessionApiUtil.logout().then(user => dispatch(logoutCurrentUser(user)));
 
 export const signup = user => dispatch =>
-  SessionApiUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)));
+  SessionApiUtil.signup(user).then(user => dispatch(receiveCurrentUser(user), err => (dispatch(receiveSessionErrors(err.responseJSON)))));
