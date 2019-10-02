@@ -23,9 +23,22 @@ class SessionForm extends React.Component {
     this.props.login(user).then(this.props.closeModal);
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <div className="login-form-container">
+        <button onClick={this.props.signup}> Sign up</button>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to Kimterest!
           <div className="login-form">
@@ -37,6 +50,7 @@ class SessionForm extends React.Component {
                 value={this.state.email}
                 onChange={this.update("email")}
                 className="email-input"
+                placeholder="Email"
               />
             </label>
             <br />
@@ -47,17 +61,13 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update("password")}
                 className="password-input"
+                placeholder="Password"
               />
             </label>
             <br />
-            <input
-              className="session-submit"
-              type="submit"
-              value="Log in"
-            />
+            <input className="session-submit" type="submit" value="Log in" />
 
-            {/* <Link>Not on Kimterest yet? Sign up</Link> */}
-
+            <button onClick={this.props.signup}>Not on Kimterest yet? Sign up</button>
           </div>
         </form>
       </div>

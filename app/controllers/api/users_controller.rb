@@ -1,10 +1,10 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
-
+    @user.set_username
     if @user.save
       login(@user)
-      #render pin index page aka feed
+      render '/api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -13,6 +13,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :location)
+    params.require(:user).permit(:email, :password, :age)
   end
 end

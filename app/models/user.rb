@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  validates :email, :password_digest, :session_token, :first_name, :last_name, :location, presence: true
+  validates :email, :password_digest, :session_token, :age, presence: true
   validates :email, uniqueness: true
   validates :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
@@ -37,6 +37,10 @@ class User < ApplicationRecord
     generate_unique_session_token
     save!
     self.session_token
+  end
+
+  def set_username
+    self.first_name = self.email.split("@")[0]
   end
 
   private
