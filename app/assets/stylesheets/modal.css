@@ -4,9 +4,10 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 10;
-  background-color: white;
+  border-radius: 5px;
+  border: black solid 5px;
 }
 
 .modal-child {
@@ -14,5 +15,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: 
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  height: 300px;
+  margin: 10px;
 }

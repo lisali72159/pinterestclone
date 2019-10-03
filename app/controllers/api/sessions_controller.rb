@@ -6,6 +6,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render "api/users/show"
     else
+      
       render json: ["Invalid username and/or password"], status: 401
     end
 
@@ -16,4 +17,5 @@ class Api::SessionsController < ApplicationController
     redirect_to new_session_url
   end
 
+  
 end
