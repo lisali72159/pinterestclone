@@ -11,6 +11,10 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
+  // componentWillUnmount(){
+  //   this.props.clearErrors();
+  // }
+  
   update(field) {
     return e =>
       this.setState({
@@ -21,7 +25,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.login(user).then(this.props.closeModal);
+    this.props.login(user).then(() => {
+      this.props.history.push('/feed');
+      this.props.closeModal();
+      
+    });
   }
 
   demoLogin(e) {
@@ -35,6 +43,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    // debugger
     return (
       <ul>
         {this.props.errors.map((error, i) => (
@@ -47,7 +56,9 @@ class SessionForm extends React.Component {
   render() {
     return (
       <>
-        {this.renderErrors()}
+      <div className="form">
+        <img className='form-logo' src={window.logoURL}/>
+        <div className="error-msg">{this.renderErrors()}</div>
         <button onClick={this.props.signup}> Sign up</button>
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -55,7 +66,7 @@ class SessionForm extends React.Component {
             <div className="login-form">
               <br />
               <input
-                type="text"
+                type="email"
                 value={this.state.email}
                 onChange={this.update("email")}
                 className="email-input"
@@ -72,6 +83,7 @@ class SessionForm extends React.Component {
               <br />
               <input className="red-button" type="submit" value="Log in" />
               <br />
+              
               <input
                 className="red-button"
                 type="submit"
@@ -84,6 +96,7 @@ class SessionForm extends React.Component {
               </button>
             </div>
           </form>
+        </div>
         </div>
       </>
     );

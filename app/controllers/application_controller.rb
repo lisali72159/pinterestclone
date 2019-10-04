@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    return nil unless session[:session_token]
+    # debugger
+    # return nil unless session[:session_token]
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
@@ -21,9 +22,11 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
+    # debugger
     current_user.reset_session_token!
     session[:session_token] = nil
     @current_user = nil
+    # debugger
   end
 
   def require_logged_in

@@ -1,0 +1,60 @@
+
+
+.feed-logo {
+  height: 28px;
+  width: 28px;
+  padding: 4px;
+  float: left;
+}
+
+.navbar{
+  display: inline-block;
+  width: 100%;
+}
+
+.menu{
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+}
+
+.menu-buttons-list{
+  display: flex;
+  position: absolute;
+  flex-direction: column-reverse;
+}
+
+.menu-buttons{
+  
+  float: none;
+  color: black;
+  padding: 6px 6px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  float: right;
+  margin: 40px;
+  
+}
+
+.menu-buttons:hover{
+  background-color: #ddd;
+}
+
+.search-bar {
+  box-sizing: border-box;
+  background-color: rgb(239, 239, 239);
+  border-radius: 8px;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  position: relative;
+  padding-left: 16px; 
+  padding-right: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  text-shadow: none;
+
+}
+

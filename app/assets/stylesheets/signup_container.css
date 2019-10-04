@@ -1,4 +1,4 @@
-body {
+.form {
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -23,9 +23,32 @@ button.link {
   color: gray;
   background: none;
   margin: 0;
-  padding: 0;
+  padding: 5;
   border: none;
   cursor: pointer;
+}
+
+button.link:hover {
+  text-decoration: underline;
+}
+
+.form-logo {
+  height: 53px;
+  width: 53px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}
+
+input {
+  margin: 5px;
+}
+
+.error-msg {
+  display: flex;
+  font-size: 10px;
+  color: red;
+  list-style: none;
 }
 /* 
 button.link span {

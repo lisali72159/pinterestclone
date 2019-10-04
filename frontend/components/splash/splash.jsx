@@ -12,7 +12,7 @@ class Splash extends React.Component {
   }
 
   render() {
-    return <img src={window.splashURL} />;
+    return <img className="splash" src={window.splashURL} />;
   }
 }
 

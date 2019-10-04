@@ -2,9 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
-import { closeModal } from "../../actions/modal_actions";
+import { openModal, closeModal } from "../../actions/modal_actions";
+import { withRouter } from 'react-router-dom';
 
 function Modal({ modal, closeModal }) {
+
   if (!modal) {
     return null;
   }
@@ -33,7 +35,8 @@ function Modal({ modal, closeModal }) {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+  // debugger
   return {
     modal: state.ui.modal
   };
