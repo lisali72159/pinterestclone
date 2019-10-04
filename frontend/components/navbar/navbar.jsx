@@ -35,13 +35,13 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <div className="navbar">
-        <img className='feed-logo' src={window.feedlogoURL} />
+      <div className="navbar-container">
+        <button className="nav-button"><img className='feed-logo' src={window.feedlogoURL} /></button>
         <input type="search" className="search-bar" placeholder="Search for Kims"/>
 
-        <button>Home</button>
+        <button className="nav-button">Home</button>
         <button>{this.props.name}</button>
-          <button onClick={this.showMenu}>
+          <button className="nav-button" onClick={this.showMenu}>
            Menu
           </button>
       

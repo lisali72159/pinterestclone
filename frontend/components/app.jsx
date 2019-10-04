@@ -4,7 +4,7 @@ import Modal from "../components/modal/modal";
 import SplashContainer from "./splash/splash_container";
 import NavbarContainer from '../components/navbar/navbar_container';
 import { Switch } from 'react-router-dom';
-import Profile from './profile/profile'
+import Profile from './profile/profile';
 
 
 

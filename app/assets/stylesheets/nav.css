@@ -7,9 +7,10 @@
   float: left;
 }
 
-.navbar{
-  display: inline-block;
-  width: 100%;
+.navbar-container{
+  display: flex;
+  justify-content: space-around;
+  height: 64px;
 }
 
 .menu{
@@ -19,11 +20,17 @@
   padding: 20px;
 }
 
-/* .menu-buttons-list{
-  display: flex;
-  position: absolute;
-  flex-direction: column-reverse;
-} */
+.nav-button{
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  height: 48px;
+  width: 48px;
+}
+
+.nav-button:hover{
+  background-color: rgb(233, 227, 227)
+}
 
 .menu-buttons{
   
@@ -38,6 +45,7 @@
   margin: 0;
   flex-direction: column;
   width: 50px;
+  
   
 }
 
@@ -58,6 +66,6 @@
   align-items: center;
   justify-content: flex-start;
   text-shadow: none;
-
+  height: 40px;
 }
 
