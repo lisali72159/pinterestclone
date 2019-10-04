@@ -14,15 +14,16 @@
 
 .menu{
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
 }
 
-.menu-buttons-list{
+/* .menu-buttons-list{
   display: flex;
   position: absolute;
   flex-direction: column-reverse;
-}
+} */
 
 .menu-buttons{
   
@@ -30,11 +31,13 @@
   color: black;
   padding: 6px 6px;
   text-decoration: none;
-  display: block;
+  display: flex;
   text-align: left;
-  font-size: 12px;
+  font-size: 10px;
   float: right;
-  margin: 40px;
+  margin: 0;
+  flex-direction: column;
+  width: 50px;
   
 }
 

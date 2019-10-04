@@ -38,6 +38,9 @@ class Navbar extends React.Component {
       <div className="navbar">
         <img className='feed-logo' src={window.feedlogoURL} />
         <input type="search" className="search-bar" placeholder="Search for Kims"/>
+
+        <button>Home</button>
+        <button>{this.props.name}</button>
           <button onClick={this.showMenu}>
            Menu
           </button>
@@ -60,8 +63,7 @@ class Navbar extends React.Component {
       : (null)
       }
       
-      <button>Home</button>
-      <button>{this.props.name}</button>
+      
       </div>
     );
   }
