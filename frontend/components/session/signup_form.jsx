@@ -50,14 +50,14 @@ class SignupForm extends React.Component {
       <>
       <div className="form">
         <img className='form-logo' src={window.logoURL} />
-        <div className="error-msg">{this.renderErrors()}</div>
-        <button className="top-button" onClick={this.props.login}>
+          <span className="error-msg">{this.renderErrors()}</span>
+        <button className="float-button" onClick={this.props.login}>
           Log in
         </button>
 
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            <h2>Welcome to Kimterest</h2>
+            <h2 className="welcome">Welcome to Kimterest</h2>
             <h5>Find new ideas to try</h5>
 
             <div className="signup-form">
@@ -67,7 +67,7 @@ class SignupForm extends React.Component {
                 type="email"
                 value={this.state.email}
                 onChange={this.update("email")}
-                className="email-input"
+                className="session-input"
                 placeholder="Email"
               />
 
@@ -77,7 +77,7 @@ class SignupForm extends React.Component {
                 type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
-                className="createpassword-input"
+                className="session-input"
                 placeholder="Create A Password"
               />
 
@@ -87,14 +87,15 @@ class SignupForm extends React.Component {
                 type="text"
                 value={this.state.age}
                 onChange={this.update("age")}
-                className="age-input"
+                className="session-input"
                 placeholder="Age"
               />
 
               <br />
+              
               <input className="red-button" type="submit" value="Sign up" />
               <br></br>
-
+                
             </div>
           </form>
           

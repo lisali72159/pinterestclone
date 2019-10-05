@@ -1,13 +1,14 @@
 .modal-background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   background: rgba(0, 0, 0, 0.9);
   z-index: 10;
-  border-radius: 5px;
-  border: black solid 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  
 }
 
 .modal-child {
@@ -17,7 +18,20 @@
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
-  border-radius: 8px;
-  height: 380px;
+  border-radius: 6px;
+  min-height: 370px;
+  width: 300px;
+  height: 420px;
   margin: 10px;
+  letter-spacing: -1.2px;
+  font-size: 16px;
+  color: #333333;
+  text-align: center;
+  justify-content: center;
+  /* border: #333333 solid 0.5px; */
+}
+
+.welcome {
+  font-weight: bold;
+  
 }

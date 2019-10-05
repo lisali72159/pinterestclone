@@ -5,31 +5,40 @@ class Profile extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      first_name: "",
-      last_name: "",
-      location: "",
-      age: "",
-      description: "",
+      first_name: this.props.user.first_name,
+      last_name: this.props.user.last_name,
+      email: this.props.user.email,
+      location: this.props.user.location,
+      age: this.props.user.age,
     }
   }
-
   
-
   render(){
     return (
       <>
-    <div className="profile-info">
       <Navbar />
       
-      <div>
-        {/* <h1>{this.props.first_name}</h1> {this.props.last_name}</h1>
-       <h3>{this.props.location}</h3> */}
+    <div className="profile-container">
+
+          <div className="profile-buttons-container">
+            <button className="profile-buttons">Add Board/Pin</button>
+            <button className="profile-buttons">Edit Profile</button>
+            <button className="profile-buttons">Upload Pin</button>
+          </div>
+          <br/>
+        <div className="user-info">
+          <h2>{this.state.first_name} {this.state.last_name}</h2> 
+          <h5>{this.state.location}</h5>
+          <h5>0 followers • 0 following</h5>
+        </div>
+      
+      <div className="pfp">
+            <img src={window.defaultpfpURL}></img>
       </div>
       
-      <h4>0 followers 0 following</h4>
-      <button>Add Board/Pin</button>
-      <button>Edit Profile</button>
-      <button>Upload Pin</button>
+
+       
+      
       
     </div>
     </>

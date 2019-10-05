@@ -59,25 +59,25 @@ class SessionForm extends React.Component {
       <div className="form">
         <img className='form-logo' src={window.logoURL}/>
         <div className="error-msg">{this.renderErrors()}</div>
-        <button onClick={this.props.signup}> Sign up</button>
+        <button className="float-button" onClick={this.props.signup}> Sign up</button>
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            <h2>Welcome to Kimterest</h2>
+            <h2 className="welcome">Welcome to Kimterest</h2>
             <div className="login-form">
               <br />
-              <input
+              <input 
                 type="email"
                 value={this.state.email}
                 onChange={this.update("email")}
-                className="email-input"
+                className="session-input"
                 placeholder="Email"
               />
               <br />
-              <input
+              <input 
                 type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
-                className="password-input"
+                className="session-input"
                 placeholder="Password"
               />
               <br />
