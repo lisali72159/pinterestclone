@@ -20,6 +20,9 @@
     "Segoe UI Emoji", "Segoe UI Symbol";
   color: #8e8e8e;
   padding: 10px;
+  margin: 0 auto;
+  width: auto;
+  cursor: pointer;
 }
 
 .profile-buttons:hover{

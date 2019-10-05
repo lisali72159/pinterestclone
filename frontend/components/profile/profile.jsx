@@ -11,6 +11,11 @@ class Profile extends React.Component {
       location: this.props.user.location,
       age: this.props.user.age,
     }
+    this.redirect_edit = this.redirect_edit.bind(this);
+  }
+
+  redirect_edit(){
+    this.props.history.push('/edit')
   }
   
   render(){
@@ -22,7 +27,7 @@ class Profile extends React.Component {
 
           <div className="profile-buttons-container">
             <button className="profile-buttons">Add Board/Pin</button>
-            <button className="profile-buttons">Edit Profile</button>
+            <button onClick={this.redirect_edit} className="profile-buttons">Edit Profile</button>
             <button className="profile-buttons">Upload Pin</button>
           </div>
           <br/>

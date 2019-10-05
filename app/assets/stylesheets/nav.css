@@ -11,16 +11,16 @@
   display: flex;
   justify-content: space-around;
   height: 64px;
-  
+  align-items: center;
   margin-left: 10px;
   margin-right: 50px;
 }
 
 .menu{
   
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
+  /* display: flex;
+  flex-direction: column; */
+  /* height: fit-content; */
 
 }
 
@@ -28,11 +28,11 @@
   display: flex;
   justify-content: center;
   height: fit-content;
-  border-radius: 20px;
+  border-radius: 25px;
   border: none;
   cursor: pointer;
   height: 48px;
-  width: 48px;
+  width: auto;
   margin-bottom: 15px;
   padding: 10px;
   margin: 8px;
@@ -44,7 +44,6 @@
     "Segoe UI Emoji", "Segoe UI Symbol";
   color: #8e8e8e;
   font-size: 13px;
-
 }
 
 .nav-button:hover{
@@ -59,9 +58,9 @@
   text-align: left;
   font-size: 10px;
   margin: 0;
-  flex-direction: column;
-  width: 50px;
-  
+  flex-direction: column-reverse;
+  width: 100px;
+  cursor: pointer;
   
 }
 

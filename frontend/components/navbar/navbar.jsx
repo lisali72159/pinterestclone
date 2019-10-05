@@ -43,7 +43,7 @@ class Navbar extends React.Component {
   }
 
   redirect_feed(){
-    debugger
+    // debugger
     this.props.history.push('/feed')
   }
 
@@ -57,10 +57,10 @@ class Navbar extends React.Component {
         <button className="nav-button">Following</button>
         <button className="nav-button" onClick={this.redirect_profile}>L</button>
         <div>
-          <div className="nav-button" onClick={this.showMenu} onBlur={this.closeMenu} tabIndex = "0">
+          <button className="nav-button" onClick={this.showMenu} onBlur={this.closeMenu} tabIndex = "0">
            Menu
        
-          </div>
+          </button>
         {this.state.showMenu ? (
 
           <div className="menu">
