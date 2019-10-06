@@ -54,13 +54,15 @@
   color: black;
   padding: 6px 6px;
   text-decoration: none;
-  display: flex;
+  display: block;
   text-align: left;
   font-size: 10px;
   margin: 0;
-  flex-direction: column-reverse;
+  position: absolute;
+  flex-direction: wrap;
   width: 100px;
   cursor: pointer;
+
   
 }
 

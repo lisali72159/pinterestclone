@@ -1,18 +1,21 @@
 import { connect } from "react-redux";
 import Profile from "./profile";
-import { edit } from "../../actions/user_actions";
+import { edit } from "../../actions/session_actions";
 
 
 const msp = state => {
-  // debugger
-  let userId = state.session.currentUser;
-  let user = state.entities.users[userId];
+  debugger
+  let user = state.session.currentUser;
+  debugger
+  // let user = state.entities.users[userId];
+  debugger
   return { user };
 }
 
 
 const mdp = dispatch => ({
-  edit: (user) => dispatch(edit(user))
+  
+  edit: (user) => dispatch(edit(user)),
 })
 
 export default connect(msp, mdp)(Profile)

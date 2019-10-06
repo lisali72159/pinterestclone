@@ -1,8 +1,9 @@
 import React from "react";
-import Navbar from '../navbar/navbar';
+import NavbarContainer from '../navbar/navbar_container';
 
 class Profile extends React.Component {
   constructor(props){
+    debugger
     super(props);
     this.state = {
       first_name: this.props.user.first_name,
@@ -15,13 +16,15 @@ class Profile extends React.Component {
   }
 
   redirect_edit(){
+    // debugger
     this.props.history.push('/edit')
   }
   
   render(){
+    debugger
     return (
       <>
-      <Navbar />
+      <NavbarContainer />
       
     <div className="profile-container">
 

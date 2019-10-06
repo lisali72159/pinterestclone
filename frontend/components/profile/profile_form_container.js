@@ -1,9 +1,12 @@
 import { connect } from "react-redux";
-import { edit } from "../../actions/user_actions"
+import { edit } from "../../actions/session_actions";
 import ProfileForm from "./profile_form";
 
 const mapStateToProps = state => {
-  return { errors: state.errors.session, formType: "edit" };
+  let userId = state.session.currentUser;
+  let user = state.entities.users[userId];
+  return { user : user, errors: state.errors.session };
+  // return { errors: state.errors.session, formType: "edit" };
 };
 
 const mapDispatchToProps = dispatch => ({

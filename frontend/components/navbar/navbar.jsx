@@ -54,7 +54,9 @@ class Navbar extends React.Component {
         <input type="search" className="search-bar" placeholder="Search for Kims"/>
 
         <button className="nav-button" onClick={this.redirect_feed}>Home</button>
+       
         <button className="nav-button">Following</button>
+       
         <button className="nav-button" onClick={this.redirect_profile}>L</button>
         <div>
           <button className="nav-button" onClick={this.showMenu} onBlur={this.closeMenu} tabIndex = "0">
@@ -68,9 +70,9 @@ class Navbar extends React.Component {
             
 
             <button className="menu-buttons">Edit Your Profile</button>
-
+<br/>
             <button className="menu-buttons">See Terms and Privacy</button>
-
+<br/>
               <button className="menu-buttons" onClick={this.redirect_signup}>Log out</button>
 
           </div>

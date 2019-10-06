@@ -1,6 +1,6 @@
 export const edit = user =>
   $.ajax({
     url: `/api/users/${user.id}`,
-    method: "PATCH ",
+    method: "PATCH",
     data: { user }
   });

@@ -1,25 +1,35 @@
 import React from "react";
+import NavbarContainer from '../navbar/navbar_container';
 
 class ProfileForm extends React.Component {
   constructor(props) {
+    
     super(props);
-    this.state = {
-      email: "",
-      password: "",
-      first_name: "",
-      last_name: "",
-      location: "",
-      age: ""
-    };
+    // this.state = { user : {
+    
+    //   first_name: "",
+    //   last_name: "",
+    //   location: "",
+    // }
+    // };
+    // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
 
+  // componentDidMount(){
+    
+  //   const { user } = this.props.user;
+  //   this.setState({ user });
+  // }
+
   // componentWillUnmount() {
+  //   debugger
   //   this.props.clearErrors();
   // }
 
   update(field) {
+    // debugger
     return e =>
       this.setState({
         [field]: e.currentTarget.value
@@ -27,15 +37,15 @@ class ProfileForm extends React.Component {
   }
 
   handleSubmit(e) {
+    // debugger
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.update(field).then(() => {
-      this.props.history.push('/profile');
-    });
+    // const user = Object.assign({}, this.state);
+    this.props.edit(this.props.user).then(this.props.history.push('/profile'));
   }
+  
 
   renderErrors() {
-
+    // debugger
     return (
       <ul>
         {this.props.errors.map((error, i) => (
@@ -45,11 +55,17 @@ class ProfileForm extends React.Component {
     );
   }
 
+  // componentDidMount() {
+  //   // debugger
+  //   this.props.edit(this.state)
+  // }
+
   render() {
     return (
       <>
+      <NavbarContainer/>
         <div className="edit-form">
-          {/* <img className='form-logo' src={window.logoURL} /> */}
+          
           <span className="error-msg">{this.renderErrors()}</span>
           
 
@@ -61,35 +77,51 @@ class ProfileForm extends React.Component {
               <div className="edit-inputs">
                 <br />
                 {/* First name */}
+                <label>First name</label>
                 <input
                   type="text"
-                  value={this.state.first_name}
+                  // value={this.state.user.first_name}
                   onChange={this.update("first_name")}
                   className="session-input"
-                  placeholder="First Name"
                 />
 
                 <br />
-                {/* Password */}
+                {/* LastName */}
+                <label>Last name</label>
                 <input
                   type="text"
-                  value={this.state.last_name}
+                  // value={this.state.user.last_name}
                   onChange={this.update("last_name")}
                   className="session-input"
-                  placeholder="Last Name"
+                  
                 />
 
                 <br />
-                {/* Age */}
+                {/* Location */}
+                <label>Location</label>
                 <input
                   type="text"
-                  value={this.state.age}
-                  onChange={this.update("age")}
+                  // value={this.state.user.location}
+                  onChange={this.update("location")}
                   className="session-input"
-                  placeholder="Age"
+                  placeholder="Ex. San Franciso, CA"
+                  
                 />
 
                 <br />
+                {/* Description */}
+                <label>Description</label>
+                <input
+                  type="text"
+                  // value={this.state.user.description}
+                  onChange={this.update("description")}
+                  className="session-input"
+                  placeholder="Write a little bit about yourself here"
+
+                />
+
+                <br />
+                
 
                 <input className="red-button" type="submit" value="Done" />
                 <br></br>

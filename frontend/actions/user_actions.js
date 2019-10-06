@@ -1,12 +1,14 @@
-import * as UserApiUtil from "../util/user_api_util";
+// import * as UserApiUtil from "../util/user_api_util";
 
-export const RECEIVE_USER_INFO = 'RECEIVE_USER_INFO';
+// export const RECEIVE_USERS = 'RECEIVE_USERS';
 
-const receiveUserInfo = user => ({
-  type: RECEIVE_USER_INFO,
-  user
-});
+// const receiveUsers = () => ({
+  
+//   type: RECEIVE_USERS,
+//   users
+// });
 
+  
 
-export const edit = user => dispatch =>
- UserApiUtil.edit(user).then(user => dispatch(receiveUserInfo(user)));
+// export const edit = user => dispatch =>
+//  UserApiUtil.edit(user).then(user => dispatch(receiveUserInfo(user)));
