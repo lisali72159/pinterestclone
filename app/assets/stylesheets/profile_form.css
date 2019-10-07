@@ -5,6 +5,7 @@
   text-align: left;
   margin-left: 35%;
   margin-top: 35px;
+  width: 50%;
 }
 
 .edit-inputs {
@@ -13,9 +14,20 @@
   font-size: 15px;
 }
 
-.textarea {
-  
-  resize: none;
+textarea {
+  min-height:100px;
+  min-width:400px;
 }
 
+.pfp-edit > img {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+}
 
+.fname-label{
+  display: block;
+  width: 50px;
+
+}

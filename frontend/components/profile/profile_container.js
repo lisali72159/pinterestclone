@@ -1,20 +1,20 @@
 import { connect } from "react-redux";
 import Profile from "./profile";
-import { edit } from "../../actions/session_actions";
+import { openModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";
 
 
 const msp = (state) => {
   // debugger
-  let user = state.session.currentUser;
+  const userId = state.session.currentUser;
+  const user = state.entities.users[userId];
   // debugger
   return { user };
 }
 
 
 const mdp = dispatch => ({
-  
-  edit: (user) => dispatch(edit(user)),
+  createBoard: () => dispatch(openModal("createBoard")),
 })
 
 export default withRouter(connect(msp, mdp)(Profile));

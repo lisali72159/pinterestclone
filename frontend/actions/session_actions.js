@@ -50,8 +50,11 @@ export const signup = user => dispatch =>
       dispatch(receiveErrors(errors.responseJSON))
     );
 
-export const edit = user => dispatch =>
-    UserApiUtil.edit(user).then(user => dispatch(receiveCurrentUser(user)), 
-    errors => dispatch(receiveErrors(errors.responseJSON))
-    );
+export const edit = user => dispatch => {
+    // debugger
+    return (
+      UserApiUtil.edit(user).then(user => dispatch(receiveCurrentUser(user)), 
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    ));
+}
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import BoardIndexItem from '../board/board_idex_item';
+import BoardIndexItem from './board_index_item';
 
 
 class BoardIndex extends React.Component {
@@ -9,7 +9,6 @@ class BoardIndex extends React.Component {
   }
 
   componentDidMount() {
-
     // debugger
     this.props.fetchAllBoards();
   }
@@ -19,14 +18,10 @@ class BoardIndex extends React.Component {
     if (!this.props.boards) {
       return null;
     }
-
-    // const boards = Object.values(this.props);
-    
+    // debugger
     const boardIndexItems = Object.values(this.props.boards).map(board => {
       return <BoardIndexItem key={board.id} board={ board } />
     });
-
-  
 
     return (
       <div className="boards-index">

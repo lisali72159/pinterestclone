@@ -6,25 +6,15 @@ class ProfileForm extends React.Component {
     
     super(props);
     this.state = {  
-      id: this.props.user.id,
+      // id: this.props.user.id,
       first_name: this.props.user.first_name,
       last_name: this.props.user.last_name,
       location: this.props.user.location,
+      description: this.props.user.description,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
-
-  // componentDidMount(){
-    
-  //   const { user } = this.props.user;
-  //   this.setState({ user });
-  // }
-
-  // componentWillUnmount() {
-  //   debugger
-  //   this.props.clearErrors();
-  // }
 
   update(field) {
     // debugger
@@ -38,33 +28,29 @@ class ProfileForm extends React.Component {
     // debugger
     e.preventDefault();
     // const user = Object.assign({}, this.state);
-    this.props.edit(this.props.user).then(this.props.history.push('/profile'));
+    this.props.edit(this.state).then(() => this.props.history.push('/profile'));
   }
   
 
-  // renderErrors() {
-  //   // debugger
-  //   return (
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>{error}</li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
-
-  componentDidMount() {
+  renderErrors() {
     // debugger
-    this.props.edit(this.state)
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
   }
+
+
 
   render() {
     return (
       <>
-      <NavbarContainer/>
         <div className="edit-form">
           
-          {/* <span className="error-msg">{this.renderErrors()}</span> */}
+          <span className="error-msg">{this.renderErrors()}</span>
           
 
           <div className="edit-form-container">
@@ -73,13 +59,23 @@ class ProfileForm extends React.Component {
               <h5>People on Pinterest will get to know you with the info below</h5>
 
               <div className="edit-inputs">
+                <br/>
+                <label>Photo</label>
+                <br/>
+                <div className='pfp-edit'><img src={window.defaultpfpURL}></img></div>
+
+
+
+
+
                 <br />
                 {/* First name */}
-                <label>  First name</label>
-                <br/>
+                <div className="f-label">
+                <label>  First name </label>
+                </div>
+                
                 <input
                   type="text"
-                  // value={this.state.user.first_name}
                   onChange={this.update("first_name")}
                   className="session-input"
                   value={this.state.first_name}
@@ -87,7 +83,7 @@ class ProfileForm extends React.Component {
 
                 
                 {/* LastName */}
-                {/* <label>Last name</label> */}
+                {/* <label className="lname-label">Last name</label> */}
                 <input
                   type="text"
                   // value={this.state.user.last_name}
@@ -96,20 +92,19 @@ class ProfileForm extends React.Component {
                   value={this.state.last_name}
                 />
 
-                
+                <br/>
 
                 <br />
                 {/* Description */}
                 <label>Description</label>
                 <br/>
-                <div className="textarea"><textarea 
-                  // value={this.state.user.description}
+                <textarea rows="10"
                   onChange={this.update("description")}
                   className="session-input"
                   placeholder="Write a little bit about yourself here"
-
+                  value={this.state.description}
                 ></textarea>
-                </div>
+                <br/>
                 <br />
                 {/* Location */}
                 <label>Location</label>

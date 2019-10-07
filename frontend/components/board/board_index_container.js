@@ -3,8 +3,8 @@ import Board from "./board_index";
 import { fetchAllBoards } from '../../actions/board_actions';
 
 const mapStateToProps = state => {
-  // debugger
   let boards = state.entities.boards;
+  // debugger
   
   return { boards }
 };

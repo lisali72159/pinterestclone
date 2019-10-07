@@ -2,8 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
+import BoardFormContainer from "../board/board_form_container";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { withRouter } from 'react-router-dom';
+
 
 function Modal({ modal, closeModal }) {
 
@@ -18,14 +20,24 @@ function Modal({ modal, closeModal }) {
     case "signup":
       component = <SignupFormContainer />;
       break;
+    case "createBoard":
+      component = <BoardFormContainer />;
+      break;
     default:
       return null;
   }
-
-  if (component === <LoginFormContainer /> || <SignupFormContainer />) {
-    return <div className="modal-child">{component}</div>;
+  // debugger
+  if (modal === "login" || modal === "signup") {
+    return (
+      <>
+      <div className="modal-background">
+    <div className="modal-child">{component}</div>
+    </div>
+    </>
+    )
   } else {
     return (
+      
       <div className="modal-background" onClick={closeModal}>
         <div className="modal-child" onClick={e => e.stopPropagation()}>
           {component}

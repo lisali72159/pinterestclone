@@ -1,16 +1,17 @@
-export const fetchAllBoards = boards =>
+export const fetchAllBoards = () =>
   $.ajax ({
     url: "/api/boards",
-    method: 'GET',
-    data: { boards }
+    method: 'GET'
   })
 
-export const createBoard = board =>
-  $.ajax({
+export const createBoard = board => {
+  debugger
+  return ($.ajax({
     url: "/api/boards",
     method: "POST",
-    data: { board }
-  });
+    data: { board },
+    }))
+  };
 
 export const deleteBoard = boardId =>
   $.ajax({

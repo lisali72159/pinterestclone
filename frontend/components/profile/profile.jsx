@@ -13,12 +13,32 @@ class Profile extends React.Component {
       email: this.props.user.email,
       location: this.props.user.location,
       age: this.props.user.age,
+      description: this.props.user.description,
+      showMenu: false,
     }
     this.redirect_edit = this.redirect_edit.bind(this);
+    this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+ 
+
+  showMenu(e) {
+    e.persist();
+    e.stopPropagation();
+    if (e.target.className === 'profile-button' && this.state.showMenu) {
+      return this.closeMenu(e);
+    }
+    this.setState({showMenu: true })
   }
 
+  closeMenu(e) {
+    if (!e.relatedTarget || e.currentTarget.className === 'profile-button') {
+      return this.setState({ showMenu: false });
+
+    }
+  }  
   redirect_edit(){
-    debugger
+    // debugger
     this.props.history.push('/edit')
   }
   
@@ -26,21 +46,33 @@ class Profile extends React.Component {
     // debugger
     return (
       <>
-      <NavbarContainer />
+
       
     <div className="profile-container">
-
-          <div className="profile-buttons-container">
-            <button className="profile-buttons"> <img src={window.plusURL}></img></button>
-            <button onClick={this.redirect_edit} className="profile-buttons"> <img src={window.pencilURL}></img></button>
-            <button className="profile-buttons"> <img src={window.uploadURL}></img></button>
-          </div>
-          <br/>
-        <div className="user-info">
-          <h2>{this.state.first_name} {this.state.last_name}</h2> 
-          <h5>{this.state.location}</h5>
-          <h5>0 followers • 0 following</h5>
-        </div>
+      <div className="profile-buttons-container">
+            <button className="profile-buttons" onClick={this.showMenu} onBlur={this.closeMenu} tabIndex="0"> 
+              <img src={window.plusURL}></img>
+            </button>
+            {this.state.showMenu ? (
+              <div className="sub-menu">
+                <button className="sub-menu-buttons" onClick={this.props.createBoard}>Create Board</button>
+                <br />
+                <button className="sub-menu-buttons">Create Pin</button>
+              </div>
+            )
+              : (null)
+            }
+          <button onClick={this.redirect_edit} className="profile-buttons"> <img src={window.pencilURL}></img></button>
+          <button className="profile-buttons"> <img src={window.uploadURL}></img></button>
+      </div>
+      <br/>
+      
+      <div className="user-info">
+        <h2>{this.state.first_name} {this.state.last_name}</h2> 
+        <h5>{this.state.description}</h5>
+        <h5>{this.state.location}</h5>
+        <h5>0 followers • 0 following</h5>
+      </div>
       
       <div className="pfp">
             <img src={window.defaultpfpURL}></img>
@@ -56,5 +88,5 @@ class Profile extends React.Component {
   }
 }
 
-export default withRouter(Profile);
+export default Profile;
 //Button allows user to change user information. Redirects to an edit user page.

@@ -4,10 +4,10 @@ import ProfileForm from "./profile_form";
 
 const mapStateToProps = state => {
   // debugger
-  let userId = state.session.currentUser.id;
+  let userId = state.session.currentUser;
   let user = state.entities.users[userId];
-  return { user };
-  // return { errors: state.errors.session, formType: "edit" };
+  // debugger
+  return { user, errors: state.errors.session, formType: "edit" };
 };
 
 const mapDispatchToProps = dispatch => ({

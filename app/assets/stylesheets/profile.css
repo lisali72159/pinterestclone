@@ -57,6 +57,7 @@ h2 {
   position: absolute;
   right: 30%;
   top: 25%;
+  z-index: -1;
 }
 
 

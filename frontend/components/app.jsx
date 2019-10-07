@@ -18,10 +18,10 @@ const App = () => (
     <header>
       
       <AuthRoute exact path="/" component={SplashContainer} />
-      <ProtectedRoute exact path="/feed" component={NavbarContainer} />
+      <ProtectedRoute path="/" component={NavbarContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/edit" component={ProfileFormContainer} />
-      <Route exact path="/boards" component={BoardIndexContainer} />
+      {/* <Route exact path="/boards" component={BoardIndexContainer} /> */}
 
       
     </header>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, withRouter } from 'react-router-dom';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -39,16 +40,18 @@ class Navbar extends React.Component {
   }
 
   redirect_profile(){
+    // debugger
     this.props.history.push('/profile')
   }
 
   redirect_edit() {
+    // debugger
     this.props.history.push('/edit')
   }
 
   redirect_feed(){
     // debugger
-    this.props.history.push('/feed')
+    this.props.history.push('/')
   }
 
   render() {

@@ -28,10 +28,25 @@
   color: #333333;
   text-align: center;
   justify-content: center;
-  /* border: #333333 solid 0.5px; */
+  border: #333333 solid 0.5px;
 }
 
 .welcome {
   font-weight: bold;
   
+}
+
+.close-x{
+  float: right;
+  cursor: pointer;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.edit-form{
+  
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ,
+    Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 }
