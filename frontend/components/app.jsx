@@ -8,7 +8,7 @@ import { Switch } from 'react-router-dom';
 import ProfileContainer from './profile/profile_container';
 import ProfileFormContainer from './profile/profile_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-// import BoardContainer from './board/board_container';
+import BoardIndexContainer from './board/board_index_container';
 
 
 
@@ -21,6 +21,7 @@ const App = () => (
       <ProtectedRoute exact path="/feed" component={NavbarContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/edit" component={ProfileFormContainer} />
+      <Route exact path="/boards" component={BoardIndexContainer} />
 
       
     </header>

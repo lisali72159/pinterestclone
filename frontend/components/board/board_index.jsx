@@ -1,30 +1,44 @@
-import 'React' from 'react';
+import React from 'react';
+import BoardIndexItem from '../board/board_idex_item';
+
 
 class BoardIndex extends React.Component {
+  // debugger
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
+
+    // debugger
     this.props.fetchAllBoards();
   }
 
   render(){
-    const { boards } = this.props;
-    const boardIndexItems = boards.map(board => {
+    // debugger
+    if (!this.props.boards) {
+      return null;
+    }
+
+    // const boards = Object.values(this.props);
+    
+    const boardIndexItems = Object.values(this.props.boards).map(board => {
       return <BoardIndexItem key={board.id} board={ board } />
     });
 
+  
+
     return (
       <div className="boards-index">
+       
         <div className="sub-nav">
-          <button>Boards</button>
-          <button>Pins</button>
+          <button className="board-button">Boards</button>
+          <button className="board-button">Pins</button>
         </div>
 
         <div className="boards-container">
           <ul>
-            { BoardIndexItem }
+            { boardIndexItems }
           </ul>
         </div>
       </div>

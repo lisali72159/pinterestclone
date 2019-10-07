@@ -1,6 +1,6 @@
-class Api::SessionsController < ApplicationController
+class Api::BoardsController < ApplicationController
 
-  before_action :ensure_logged_in
+  
 
   def create
     @board = Board.new(board_params)

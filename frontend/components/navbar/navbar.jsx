@@ -42,6 +42,10 @@ class Navbar extends React.Component {
     this.props.history.push('/profile')
   }
 
+  redirect_edit() {
+    this.props.history.push('/edit')
+  }
+
   redirect_feed(){
     // debugger
     this.props.history.push('/feed')
@@ -50,7 +54,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="navbar-container">
-        <button className="nav-button"><img className='feed-logo' src={window.feedlogoURL} /></button>
+        <button className="nav-button" onClick={this.redirect_feed}><img className='feed-logo' src={window.feedlogoURL} /></button>
         <input type="search" className="search-bar" placeholder="Search for Kims"/>
 
         <button className="nav-button" onClick={this.redirect_feed}>Home</button>
@@ -60,7 +64,7 @@ class Navbar extends React.Component {
         <button className="nav-button" onClick={this.redirect_profile}>L</button>
         <div>
           <button className="nav-button" onClick={this.showMenu} onBlur={this.closeMenu} tabIndex = "0">
-           Menu
+            <img src={window.menuURL}></img>
        
           </button>
         {this.state.showMenu ? (
@@ -69,10 +73,8 @@ class Navbar extends React.Component {
 
             
 
-            <button className="menu-buttons">Edit Your Profile</button>
-<br/>
-            <button className="menu-buttons">See Terms and Privacy</button>
-<br/>
+            <button className="menu-buttons" onClick={this.redirect_edit}>Edit Your Profile</button>    
+                <br/>
               <button className="menu-buttons" onClick={this.redirect_signup}>Log out</button>
 
           </div>

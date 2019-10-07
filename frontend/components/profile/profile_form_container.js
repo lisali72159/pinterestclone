@@ -3,9 +3,10 @@ import { edit } from "../../actions/session_actions";
 import ProfileForm from "./profile_form";
 
 const mapStateToProps = state => {
-  let userId = state.session.currentUser;
+  // debugger
+  let userId = state.session.currentUser.id;
   let user = state.entities.users[userId];
-  return { user : user, errors: state.errors.session };
+  return { user };
   // return { errors: state.errors.session, formType: "edit" };
 };
 

@@ -1,9 +1,11 @@
 import React from "react";
 import NavbarContainer from '../navbar/navbar_container';
+import BoardIndexContainer from '../board/board_index_container';
+import { withRouter } from 'react-router-dom';
 
 class Profile extends React.Component {
   constructor(props){
-    debugger
+    // debugger
     super(props);
     this.state = {
       first_name: this.props.user.first_name,
@@ -16,12 +18,12 @@ class Profile extends React.Component {
   }
 
   redirect_edit(){
-    // debugger
+    debugger
     this.props.history.push('/edit')
   }
   
   render(){
-    debugger
+    // debugger
     return (
       <>
       <NavbarContainer />
@@ -29,9 +31,9 @@ class Profile extends React.Component {
     <div className="profile-container">
 
           <div className="profile-buttons-container">
-            <button className="profile-buttons">Add Board/Pin</button>
-            <button onClick={this.redirect_edit} className="profile-buttons">Edit Profile</button>
-            <button className="profile-buttons">Upload Pin</button>
+            <button className="profile-buttons"> <img src={window.plusURL}></img></button>
+            <button onClick={this.redirect_edit} className="profile-buttons"> <img src={window.pencilURL}></img></button>
+            <button className="profile-buttons"> <img src={window.uploadURL}></img></button>
           </div>
           <br/>
         <div className="user-info">
@@ -45,7 +47,7 @@ class Profile extends React.Component {
       </div>
       
 
-       
+       <BoardIndexContainer />
       
       
     </div>
@@ -54,5 +56,5 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+export default withRouter(Profile);
 //Button allows user to change user information. Redirects to an edit user page.

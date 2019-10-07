@@ -6,12 +6,13 @@ import uiReducer from "./ui_reducer";
 import usersReducer from "./users_reducer";
 
 
+
 const rootReducer = combineReducers({
   entities: entitiesReducer,
   session: sessionReducer,
   errors: errorsReducer,
   ui: uiReducer,
-  users: usersReducer,
+  users: usersReducer
 });
 
 export default rootReducer;
