@@ -7,7 +7,7 @@ const mapStateToProps = state => {
   let userId = state.session.currentUser;
   let user = state.entities.users[userId];
   // debugger
-  return { user, errors: state.errors.session, formType: "edit" };
+  return { user, errors: state.errors.session };
 };
 
 const mapDispatchToProps = dispatch => ({

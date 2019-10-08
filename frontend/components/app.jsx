@@ -21,6 +21,8 @@ const App = () => (
       <ProtectedRoute path="/" component={NavbarContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/edit" component={ProfileFormContainer} />
+      {/* <ProtectedRoute exact path="/pin-builder" component={PinContainer} /> */}
+
       {/* <Route exact path="/boards" component={BoardIndexContainer} /> */}
 
       

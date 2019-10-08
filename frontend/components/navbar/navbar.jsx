@@ -13,6 +13,7 @@ class Navbar extends React.Component {
     this.redirect_signup = this.redirect_signup.bind(this);
     this.redirect_profile = this.redirect_profile.bind(this);
     this.redirect_feed = this.redirect_feed.bind(this);
+    this.redirect_edit = this.redirect_edit.bind(this);
   }
 
 

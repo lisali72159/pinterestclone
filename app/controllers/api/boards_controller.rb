@@ -3,27 +3,27 @@ class Api::BoardsController < ApplicationController
   
 
   def create
-    debugger
+    # debugger
     @board = Board.new(board_params)
     @board.author_id = current_user.id
     if @board.save
-      debugger
+      # debugger
       render '/api/boards/index'
     else
-      debugger
+      # debugger
       render json: @board.errors.full_messages, status: 401
     end
   end
 
   def index
     @boards = Board.all.includes(:author)
-    debugger
+    # debugger
     render '/api/boards/index'
   end
 
   def update
-     @user = current_user
-    if @user.update(user_params)
+    
+    if @board.update(board_params)
         render 'api/boards/index'
     else
         render json: @board.errors.full_messages, status: 422

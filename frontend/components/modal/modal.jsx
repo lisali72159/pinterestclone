@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
 import BoardFormContainer from "../board/board_form_container";
+import EditBoardFormContainer from "../board/edit_board_form_container";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { withRouter } from 'react-router-dom';
 

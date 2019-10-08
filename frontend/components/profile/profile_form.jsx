@@ -6,14 +6,15 @@ class ProfileForm extends React.Component {
     
     super(props);
     this.state = {  
-      // id: this.props.user.id,
       first_name: this.props.user.first_name,
       last_name: this.props.user.last_name,
       location: this.props.user.location,
       description: this.props.user.description,
+      photoFile: null,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    // this.handleFile = this.handleFile.bind(this);
   }
 
   update(field) {
@@ -27,10 +28,14 @@ class ProfileForm extends React.Component {
   handleSubmit(e) {
     // debugger
     e.preventDefault();
-    // const user = Object.assign({}, this.state);
+    // const formData = new FormData();
+    
     this.props.edit(this.state).then(() => this.props.history.push('/profile'));
   }
   
+  handleFile(e){
+    this.setState({photoFile: e.currentTarget.files[0]})
+  }
 
   renderErrors() {
     // debugger
@@ -46,12 +51,11 @@ class ProfileForm extends React.Component {
 
 
   render() {
+    console.log(this.state);
     return (
       <>
         <div className="edit-form">
-          
           <span className="error-msg">{this.renderErrors()}</span>
-          
 
           <div className="edit-form-container">
             <form onSubmit={this.handleSubmit} >
@@ -64,7 +68,7 @@ class ProfileForm extends React.Component {
                 <br/>
                 <div className='pfp-edit'><img src={window.defaultpfpURL}></img></div>
 
-
+                {/* <input type="file" onChange={this.handleFile}/> */}
 
 
 
@@ -86,7 +90,6 @@ class ProfileForm extends React.Component {
                 {/* <label className="lname-label">Last name</label> */}
                 <input
                   type="text"
-                  // value={this.state.user.last_name}
                   onChange={this.update("last_name")}
                   className="session-input"
                   value={this.state.last_name}
@@ -111,7 +114,6 @@ class ProfileForm extends React.Component {
                 <br/>
                 <input
                   type="text"
-                  // value={this.state.user.location}
                   onChange={this.update("location")}
                   className="session-input"
                   placeholder="Ex. San Franciso, CA"

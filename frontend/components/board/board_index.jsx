@@ -1,7 +1,6 @@
 import React from 'react';
 import BoardIndexItem from './board_index_item';
 
-
 class BoardIndex extends React.Component {
   // debugger
   constructor(props) {
@@ -20,7 +19,7 @@ class BoardIndex extends React.Component {
     }
     // debugger
     const boardIndexItems = Object.values(this.props.boards).map(board => {
-      return <BoardIndexItem key={board.id} board={ board } />
+      return <BoardIndexItem key={board.id} board={ board } boardId={board.id}/>
     });
 
     return (

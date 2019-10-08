@@ -18,6 +18,11 @@ h2 {
   margin: 8px;
 }
 
+.profile-buttons-container{
+  display:flex;
+  flex-direction: row;
+  justify-content:flex-start;
+}
 
 .profile-buttons{
   border-style: none;
@@ -30,9 +35,10 @@ h2 {
     "Segoe UI Emoji", "Segoe UI Symbol";
   color: #8e8e8e;
   padding: 10px;
-  margin: 0 auto;
+  
   width: 50px;
   cursor: pointer;
+  
 }
 
 .profile-buttons:hover{
@@ -81,4 +87,22 @@ h2 {
   font-weight: bold;
   padding: 8px 16px;
   text-decoration: none;
+}
+
+.sub-menu-container {
+  display: flex;
+  flex-direction: column;
+}
+.sub-menu-buttons {
+  display: flex;
+  flex-direction:column;
+  width: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+
+}
+
+.sub-menu-buttons:hover {
+  background-color:  rgb(233, 227, 227)
 }

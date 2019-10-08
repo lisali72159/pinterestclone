@@ -50,20 +50,27 @@ class Profile extends React.Component {
       
     <div className="profile-container">
       <div className="profile-buttons-container">
+            <div className="sub-menu-container">
             <button className="profile-buttons" onClick={this.showMenu} onBlur={this.closeMenu} tabIndex="0"> 
               <img src={window.plusURL}></img>
             </button>
             {this.state.showMenu ? (
+              
               <div className="sub-menu">
+                
                 <button className="sub-menu-buttons" onClick={this.props.createBoard}>Create Board</button>
-                <br />
+                
                 <button className="sub-menu-buttons">Create Pin</button>
+             
               </div>
             )
-              : (null)
-            }
+            : (null)
+          }
+          </div>
+            <div>
           <button onClick={this.redirect_edit} className="profile-buttons"> <img src={window.pencilURL}></img></button>
           <button className="profile-buttons"> <img src={window.uploadURL}></img></button>
+          </div>
       </div>
       <br/>
       
