@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BoardForm extends React.Component {
+class PinForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -19,12 +19,16 @@ class BoardForm extends React.Component {
       });
   }
 
+  redirect_profile() {
+    // debugger
+    this.props.history.push('/profile')
+  }
+
   handleSubmit(e) {
     // debugger
     e.preventDefault();
-    const board = Object.assign({}, this.state);
-    this.props.createBoard(board).then(() => {
-      this.props.closeModal();
+    const pin = Object.assign({}, this.state);
+    this.props.createPin(pin).then(() => {
       this.props.history.push('/profile');
     });
   }
@@ -36,7 +40,6 @@ class BoardForm extends React.Component {
 
         <div className="pin-form-container">
           <form onSubmit={this.handleSubmit} className="pin-form-box">
-            <h2 className="welcome">Create board</h2>
 
             <div className="board-form">
               <br />
@@ -48,7 +51,7 @@ class BoardForm extends React.Component {
                 value={this.state.title}
                 onChange={this.update("title")}
                 className="pin-input"
-                placeholder='Add your titles'
+                placeholder='Add your title'
               />
 
               <br/>
@@ -58,11 +61,21 @@ class BoardForm extends React.Component {
                 type="text"
                 value={this.state.description}
                 onChange={this.update("description")}
-                className="board-input"
+                className="pin-input"
                 placeholder="Tell everyone what you Pin is about"
               />
               <br/>
-              <input onClick={} className="red-button" type="submit" value="Create" />
+                {/* Link */}
+
+                <input
+                  type="text"
+                  value={this.state.link}
+                  onChange={this.update("link")}
+                  className="pin-input"
+                  placeholder="Add a destination link"
+                />
+                <br />
+              <input onClick={this.redirect_profile} className="red-button" type="submit" value="Save" />
               <br></br>
 
             </div>
@@ -76,4 +89,4 @@ class BoardForm extends React.Component {
 }
 }
 
-export default BoardForm;
+export default PinForm;

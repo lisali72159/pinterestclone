@@ -19,6 +19,7 @@ class Profile extends React.Component {
     this.redirect_edit = this.redirect_edit.bind(this);
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+    this.redirect_pin = this.redirect_pin.bind(this);
   }
  
 
@@ -42,6 +43,10 @@ class Profile extends React.Component {
     this.props.history.push('/edit')
   }
   
+  redirect_pin(){
+    this.props.history.push('/pin-builder')
+  }
+
   render(){
     // debugger
     return (
@@ -60,7 +65,7 @@ class Profile extends React.Component {
                 
                 <button className="sub-menu-buttons" onClick={this.props.createBoard}>Create Board</button>
                 
-                <button className="sub-menu-buttons">Create Pin</button>
+                <button className="sub-menu-buttons" onClick={this.redirect_pin}>Create Pin</button>
              
               </div>
             )

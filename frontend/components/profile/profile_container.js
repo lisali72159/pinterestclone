@@ -15,6 +15,7 @@ const msp = (state) => {
 
 const mdp = dispatch => ({
   createBoard: () => dispatch(openModal("createBoard")),
+  
 })
 
 export default withRouter(connect(msp, mdp)(Profile));
