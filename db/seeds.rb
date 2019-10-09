@@ -8,3 +8,8 @@
 
 demouser = User.create({first_name: 'Lisa', last_name: 'Li', location:'New York City', age: 24, email: "lisa@gmail.com", password: "lisalisa"})
 
+
+
+pin1 = Pin.create({author_id: 1, board_id: 1})
+file = open('https://kim-seeds.s3.amazonaws.com/k4.jpg')
+pin1.photo.attach(io: file, filename: 'k4.jpg')

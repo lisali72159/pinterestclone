@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import PinIndex from "./board_index";
+import PinIndex from "./pin_index";
 import { fetchAllPins } from "../../actions/pin_actions";
 
 const mapStateToProps = state => {

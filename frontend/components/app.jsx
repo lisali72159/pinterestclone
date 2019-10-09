@@ -10,6 +10,7 @@ import ProfileFormContainer from './profile/profile_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import BoardIndexContainer from './board/board_index_container';
 import PinFormContainer from './pin/pin_form_container';
+import PinIndexContainer from './pin/pin_index_container'
 
 
 

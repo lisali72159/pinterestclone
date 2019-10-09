@@ -1,5 +1,5 @@
 import React from 'react';
-import PinIndexItem from './board_index_item';
+import PinIndexItem from './pin_index_item';
 
 class PinIndex extends React.Component {
   // debugger
@@ -13,6 +13,7 @@ class PinIndex extends React.Component {
   }
 
   render() {
+    console.log
     // debugger
     if (!this.props.pins) {
       return null;

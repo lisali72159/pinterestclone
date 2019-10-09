@@ -13,13 +13,19 @@ export const createPin = pin => {
   });
 };
 
+export const fetchPin = (id) =>
+  $.ajax({
+    url: `/api/pins/${id}`,
+    method: "GET"
+  });
+
 export const deletePin = pinId =>
   $.ajax({
     url: `/api/pins/${pinId}`,
     method: "DELETE"
   });
 
-export const editBoard = pin =>
+export const editPin = pin =>
   $.ajax({
     url: `/api/boards/${pin.id}`,
     method: "PATCH",

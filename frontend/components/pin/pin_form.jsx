@@ -7,9 +7,11 @@ class PinForm extends React.Component {
       title: "",
       description: "",
       link: "",
+      photoFile: null,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.redirect_profile = this.redirect_profile.bind(this);
   }
 
   update(field) {
@@ -17,6 +19,11 @@ class PinForm extends React.Component {
       this.setState({
         [field]: e.currentTarget.value
       });
+  }
+
+  handleFile(e){
+    // debugger
+    this.setState({photoFile: e.currentTarget.files[0]})
   }
 
   redirect_profile() {
@@ -27,6 +34,18 @@ class PinForm extends React.Component {
   handleSubmit(e) {
     // debugger
     e.preventDefault();
+    const formData = new FormData();
+    formData.append('pin[title]', this.state.title);
+    formData.append('pin[photo]', this.state.photoFile);
+    $.ajax({
+      url: '/api/posts',
+      method: "POST",
+      data: formData,
+      contentType: false,
+      processData: false
+    }).then((response) => console.log(response.message),
+    (response) => console.log(response.responseJSON));
+  
     const pin = Object.assign({}, this.state);
     this.props.createPin(pin).then(() => {
       this.props.history.push('/profile');
@@ -34,7 +53,7 @@ class PinForm extends React.Component {
   }
 
   render() {
-    return (
+    return(
       <>
       <div className="pin-form">
 
@@ -42,6 +61,9 @@ class PinForm extends React.Component {
           <form onSubmit={this.handleSubmit} className="pin-form-box">
 
             <div className="board-form">
+              <input type="file"
+              onChange={this.handleFile.bind(this)}/>
+
               <br />
               {/* Title */}
               
@@ -85,8 +107,8 @@ class PinForm extends React.Component {
         </div>
       </div>
     </>
-  );
-}
+    )
+  }
 }
 
 export default PinForm;

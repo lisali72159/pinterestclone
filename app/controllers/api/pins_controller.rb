@@ -3,9 +3,11 @@ class Api::PinsController < ApplicationController
     # debugger
     @pin = Pin.new(pin_params)
     @pin.author_id = current_user.id
+    debugger
     if @pin.save
       # debugger
-      render '/api/pins/index'
+      render json {message: "Successfully uploaded!"}
+      # render '/api/pins/index'
     else
       # debugger
       render json: @pin.errors.full_messages, status: 401
@@ -39,7 +41,7 @@ class Api::PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:author_id, :board_id, :title, :link, :description)
+    params.require(:pin).permit(:author_id, :board_id, :title, :link, :description, :photo)
   end
 
 end

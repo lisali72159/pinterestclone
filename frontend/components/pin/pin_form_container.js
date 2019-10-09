@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 
 
 const mapDispatchToProps = dispatch => ({
-  createBoard: pin => dispatch(createPin(pin)),
+  createPin: pin => dispatch(createPin(pin)),
 });
 
 export default withRouter(
