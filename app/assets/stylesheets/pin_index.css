@@ -36,7 +36,15 @@
   left: 2px;
 }
 
+.magic-button > img {
+  height: 20px;
+  width: 20px;
+}
 
+/* .editpin-logo{
+  height:20px;
+  width: 20px;
+} */
 .magic-button:hover{
   opacity: 0.8;
 }

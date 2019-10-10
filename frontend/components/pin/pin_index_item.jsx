@@ -31,7 +31,7 @@ class PinIndexItem extends React.Component {
            
           {photo}
           
-          <button className="magic-button" onClick={() => this.setState({ editShow: true })}><img className='edit-logo' src={window.editURL} /></button>
+          <button className="magic-button" onClick={() => this.setState({ editShow: true })}><img className='editform-logo' src={window.editURL} /></button>
             {/* Add pin to a board, edit a pin  */}
 
           <h6 className="caption">{this.props.pin.title}</h6>

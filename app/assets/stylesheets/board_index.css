@@ -1,4 +1,4 @@
-.board-index {
+/* .board-index {
   display:flex;
   flex-direction: row;
   justify-content: center;
@@ -27,14 +27,14 @@
 
 .board-container:hover {
   background-color: #d8d3d3;
-}
+} */
 
-.edit-button {
+/* .edit-button {
   border-radius: 50%;
   border: none;
-}
+} */
 
-.edit-button > img {
+/* .edit-button > img {
   border-radius: 50%;
   opacity: 0.9;
   left: 2px;
@@ -42,8 +42,8 @@
   width: 20px;
   z-index: 8;
   cursor: pointer;
-}
+} */
 
-.edit-button:hover{
+/* .edit-button:hover{
   opacity: 1.0;
-}
+} */
