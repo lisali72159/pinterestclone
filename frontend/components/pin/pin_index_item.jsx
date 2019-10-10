@@ -28,13 +28,14 @@ class PinIndexItem extends React.Component {
       <>
       <div className="pin-photo">
           {this.state.editShow ? editPinModal : null}
-           <div className="magic-button">
-            <button onClick={() => this.setState({editShow: true})}>Edit</button>
-             {/* Add pin to a board, edit a pin  */}
-          </div> 
+           
           {photo}
-          {this.props.pin.title}
-          {this.props.pin.link}
+          
+          <button className="magic-button" onClick={() => this.setState({ editShow: true })}><img className='edit-logo' src={window.editURL} /></button>
+            {/* Add pin to a board, edit a pin  */}
+
+          <h6 className="caption">{this.props.pin.title}</h6>
+          <h6 className="caption">{this.props.pin.link}</h6>
       </div>
       </>
     )

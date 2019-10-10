@@ -96,7 +96,7 @@ h2 {
 .sub-menu-buttons {
   display: flex;
   flex-direction:column;
-  width: 40px;
+  width: 55px;
   cursor: pointer;
   border: none;
   border-radius: 8px;

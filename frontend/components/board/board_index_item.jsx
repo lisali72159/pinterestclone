@@ -37,13 +37,14 @@ class BoardIndexItem extends React.Component {
     </div> )
     return (
       <>
-      <div>
+      <div className="board-container">
         {this.state.editShow ? editModal : null }
-        <li>{this.state.name}
+        
+        {this.state.name}
         <br/>
-            <button onClick={() => this.setState({editShow: true})}>Edit</button>
-        </li>
-      </div>
+        <br/>
+          <button className='edit-button' onClick={() => this.setState({ editShow: true })}><img src={window.editURL} /></button>
+        </div>
       </>
     )
   }

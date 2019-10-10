@@ -21,15 +21,46 @@
 }
 
 .magic-button {
-  /* position: fixed; */
   border-radius: 50%;
-  display: flex;
-  color: white;
+  position:relative;
+  top: -54px;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
-  /* display: none; */
+  /* background-color:rgb(179, 11, 11); */
+  /* background-color: transparent; */
+  background-color: rgb(255, 255, 255);
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 0;
+  opacity: 0;
+  left: 2px;
 }
+
+
+.magic-button:hover{
+  opacity: 0.8;
+}
+
+.pin-photo > h6 {
+  margin: 0;
+
+/* .magic-button:hover {
+  display:inline-block;
+  z-index: 10;
+} */ 
+
+/* .edit-logo{
+  border-radius: 50%;
+  display: none;
+  overflow: hidden;
+  position:relative;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  z-index:2;
+} */
+
 
 
 
