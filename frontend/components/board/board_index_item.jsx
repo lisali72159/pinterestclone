@@ -1,7 +1,4 @@
 import React from 'react';
-
-
-
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import BoardIndex from "../board/board_index";
@@ -27,14 +24,8 @@ class BoardIndexItem extends React.Component {
       id: this.props.board.id,
       editShow: false,
     }
-    this.closeModal
   }
 
-  // closeModal(e){
-  //   if (!e.relatedTarget) {
-  //     this.setState( {showMenu: false })
-  //   }
-  // }
 
   render() {
     // debugger
@@ -44,7 +35,6 @@ class BoardIndexItem extends React.Component {
          < EditBoardFormContainer boardId={this.props.board.id}/> 
       </div>
     </div> )
-    // debugger
     return (
       <>
       <div>

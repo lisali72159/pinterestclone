@@ -1,0 +1,36 @@
+.masonry {
+  column-count: 5;
+  column-gap: 1em;
+  width: 90%;
+  margin: 50px auto;
+}
+
+.pin-photo > img{
+  transition: opacity .4s ease-in-out;
+  display: inline-block;
+  width:100%;
+  margin: 0 0 1em;
+  border-radius: 5px;
+  cursor: zoom-in;
+  z-index: -2;
+}
+
+.pin-photo > img:hover {
+  filter: brightness(0.7);
+  z-index: -1;
+}
+
+.magic-button {
+  /* position: fixed; */
+  border-radius: 50%;
+  display: flex;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  /* display: none; */
+}
+
+
+
+

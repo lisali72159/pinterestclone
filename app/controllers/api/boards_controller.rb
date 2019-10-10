@@ -8,6 +8,7 @@ class Api::BoardsController < ApplicationController
     @board.author_id = current_user.id
     if @board.save
       # debugger
+      @boards = Board.all
       render '/api/boards/index'
     else
       # debugger
@@ -16,15 +17,17 @@ class Api::BoardsController < ApplicationController
   end
 
   def index
-    @boards = Board.all.includes(:author)
+    @boards = current_user.authored_boards
     # debugger
     render '/api/boards/index'
   end
 
   def update
-    
+    # debugger
+    @board = current_user.authored_boards.find(params[:id])
+    # debugger
     if @board.update(board_params)
-        render 'api/boards/index'
+        render 'api/boards/show'
     else
         render json: @board.errors.full_messages, status: 422
     end  

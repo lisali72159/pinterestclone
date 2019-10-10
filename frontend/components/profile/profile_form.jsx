@@ -1,9 +1,7 @@
 import React from "react";
-import NavbarContainer from '../navbar/navbar_container';
 
 class ProfileForm extends React.Component {
   constructor(props) {
-    
     super(props);
     this.state = {  
       first_name: this.props.user.first_name,
@@ -14,7 +12,6 @@ class ProfileForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    // this.handleFile = this.handleFile.bind(this);
   }
 
   update(field) {
@@ -55,7 +52,7 @@ class ProfileForm extends React.Component {
     return (
       <>
         <div className="edit-form">
-          <span className="error-msg">{this.renderErrors()}</span>
+          {/* <span className="error-msg">{this.renderErrors()}</span> */}
 
           <div className="edit-form-container">
             <form onSubmit={this.handleSubmit} >

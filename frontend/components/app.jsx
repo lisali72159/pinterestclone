@@ -8,9 +8,9 @@ import { Switch } from 'react-router-dom';
 import ProfileContainer from './profile/profile_container';
 import ProfileFormContainer from './profile/profile_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import BoardIndexContainer from './board/board_index_container';
+// import BoardIndexContainer from './board/board_index_container';
 import PinFormContainer from './pin/pin_form_container';
-import PinIndexContainer from './pin/pin_index_container'
+import PinIndexContainer from './pin/pin_index_container';
 
 
 
@@ -23,13 +23,14 @@ const App = () => (
       <ProtectedRoute path="/" component={NavbarContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/edit" component={ProfileFormContainer} />
-      {/* <ProtectedRoute exact path="/pin-builder" component={PinContainer} /> */}
       <ProtectedRoute exact path="/pin-builder" component={PinFormContainer} />
-      {/* <Route exact path="/boards" component={BoardIndexContainer} /> */}
-
-      
+      <ProtectedRoute exact path="/feed" component={PinIndexContainer} />     
     </header>
+    <body>
+      
+    </body>
   </div>
+
 );
 
 export default App;

@@ -5,7 +5,6 @@ import PinIndexItem from "../board/board_index";
 import { editPin, deletePin } from "../../actions/board_actions";
 
 
-
 const mapDispatchToProps = dispatch => {
   // debugger
   return {

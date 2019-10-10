@@ -49,7 +49,7 @@ class SignupForm extends React.Component {
     return (
       <>
       <div className="form">
-        <img className='form-logo' src={window.logoURL} />
+        <img className='form-logo'id="logo" src={window.logoURL} />
           <span className="error-msg">{this.renderErrors()}</span>
         <button className="float-button" onClick={this.props.login}>
           Log in

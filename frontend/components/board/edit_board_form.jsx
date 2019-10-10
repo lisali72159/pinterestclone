@@ -2,11 +2,14 @@ import React from 'react';
 
 class BoardForm extends React.Component {
   constructor(props) {
+    
     super(props);
     this.state = {
+      id: this.props.board.id,
       name: this.props.board.name,
       description: this.props.board.description,
     }
+    // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
@@ -52,6 +55,7 @@ class BoardForm extends React.Component {
                 <br />
                 {/* Name */}
                 <label>Name</label>
+                <br/>
                 <input
                   type="text"
                   value={this.state.name}
@@ -62,6 +66,7 @@ class BoardForm extends React.Component {
                 <br />
                 {/* Description */}
                 <label>Description</label>
+                <br/>
                 <input
                   type="text"
                   value={this.state.description}
@@ -69,9 +74,12 @@ class BoardForm extends React.Component {
                   className="board-input"
 
                 />
-                <input clasName = "gray button" type="submit" value="Delete"/>
-                <input className="gray-button" type="submit" value="Cancel" onClick={this.closeModal}/>
                 <input className="red-button" type="submit" value="Save" />
+                <button className="gray-button">Cancel</button>
+                <br/>
+                <button className = "gray button" onClick={this.props.deleteBoard(this.props.board.id)}>Delete</button>
+                
+                
                 <br></br>
 
               </div>

@@ -13,7 +13,6 @@ class PinIndex extends React.Component {
   }
 
   render() {
-    console.log
     // debugger
     if (!this.props.pins) {
       return null;
@@ -24,12 +23,10 @@ class PinIndex extends React.Component {
     });
 
     return (
-      <div className="pins-index">
-
-          <ul>
+      <div className="masonry">
+        <div className="pin-photo">
             {pinIndexItems}
-          </ul>
-       
+        </div>
       </div>
     )
   }

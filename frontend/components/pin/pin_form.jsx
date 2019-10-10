@@ -34,22 +34,22 @@ class PinForm extends React.Component {
   handleSubmit(e) {
     // debugger
     e.preventDefault();
+    // debugger
     const formData = new FormData();
     formData.append('pin[title]', this.state.title);
     formData.append('pin[photo]', this.state.photoFile);
     $.ajax({
-      url: '/api/posts',
+      url: '/api/pins',
       method: "POST",
       data: formData,
       contentType: false,
       processData: false
-    }).then((response) => console.log(response.message),
-    (response) => console.log(response.responseJSON));
+    })
   
-    const pin = Object.assign({}, this.state);
-    this.props.createPin(pin).then(() => {
+    // const pin = Object.assign({}, this.state);
+    // this.props.createPin(pin).then(() => {
       this.props.history.push('/profile');
-    });
+    // });
   }
 
   render() {
@@ -58,12 +58,12 @@ class PinForm extends React.Component {
       <div className="pin-form">
 
         <div className="pin-form-container">
-          <form onSubmit={this.handleSubmit} className="pin-form-box">
+            <form className="pin-form-box">
 
-            <div className="board-form">
-              <input type="file"
+            <div className="pin-form">
+              <div className="preview"><input type="file"
               onChange={this.handleFile.bind(this)}/>
-
+                </div>
               <br />
               {/* Title */}
               
@@ -97,7 +97,7 @@ class PinForm extends React.Component {
                   placeholder="Add a destination link"
                 />
                 <br />
-              <input onClick={this.redirect_profile} className="red-button" type="submit" value="Save" />
+                <input onClick={this.handleSubmit} className="red-button" type="submit" value="Save" />
               <br></br>
 
             </div>

@@ -9,10 +9,9 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_one_attached :photo
-
   has_many :authored_boards,
-    foreign_key: :author_id
+    foreign_key: :author_id,
+    class_name: :Board
     
   has_many :pins,
     foreign_key: :author_id
@@ -47,6 +46,7 @@ class User < ApplicationRecord
   end
 
   def reset_session_token!
+    # debugger
     self.session_token = self.class.generate_session_token
     self.save!  
     self.session_token
