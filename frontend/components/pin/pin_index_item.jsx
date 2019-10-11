@@ -43,7 +43,7 @@ class PinIndexItem extends React.Component {
             {/* Add pin to a board, edit a pin  */}
 
           <h6 className="caption">{this.props.pin.title}</h6>
-          <h6 className="caption">{this.props.pin.link}</h6>
+          {/* <h6 className="caption">{this.props.pin.link}</h6> */}
       </div>
       </>
     )
