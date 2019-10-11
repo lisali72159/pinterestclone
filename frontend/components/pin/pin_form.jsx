@@ -49,7 +49,7 @@ class PinForm extends React.Component {
     }
     debugger
     this.props.createPin(formData).then(() => {
-      this.props.history.push('/profile');
+      this.props.history.push('/feed');
     });
   }
 

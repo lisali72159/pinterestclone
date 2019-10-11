@@ -1,0 +1,11 @@
+.board-input {
+  border-radius: 5px;
+  box-shadow: none;
+  height: 25px;
+  width: 70%;
+  border: solid 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-top: 5px;
+}

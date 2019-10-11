@@ -38,7 +38,7 @@ class BoardIndexItem extends React.Component {
       <div className="board-container">
         
         
-        {name}
+        <div className="title">{name}</div>
         <br/>
         <br/>
           <button className='edit-button' onClick={() => this.props.openModal('editBoard', {id: this.props.board.id})}><img className="board-logo" src={window.editURL} /></button>

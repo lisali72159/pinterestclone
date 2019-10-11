@@ -1,0 +1,22 @@
+.gray-button {
+  background-color: rgba(239, 239, 239, 1);
+  color: rgba(51, 51, 51, 1);
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100px;
+  height: 32px;
+  margin: 5px;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ,
+    Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+}
+
+
+.gray-button:hover {
+  background-color: rgb(185, 184, 184);
+}

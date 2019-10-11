@@ -94,14 +94,15 @@ class EditPinForm extends React.Component {
 
                 />
                 <input className="red-button" type="submit" onClick={this.handleSubmit} value="Save" />
-                <button className="gray button" onClick={() => this.props.deletePin(this.props.pin.id)}>Delete</button>
+                <br/>
+                <button className="gray-button" onClick={() => this.props.deletePin(this.props.pin.id)}>Delete</button>
 
 
-                <br></br>
+                <button className="gray-button" onClick={this.props.closeModal}>Cancel</button>
 
               </div>
             </form>
-                <button className="gray-button" onClick={this.props.closeModal}>Cancel</button>
+                
 
 
           </div>
