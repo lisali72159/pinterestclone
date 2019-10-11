@@ -6,16 +6,13 @@ class Api::UsersController < ApplicationController
       login(@user)
       render '/api/users/show'
     else
-      # debugger
       render json: @user.errors.full_messages, status: 422
     end
   end
 
   def update
     @user = current_user
-    # debugger
-    if @user.update(user_params)
-      # debugger 
+    if @user.update(user_params) 
         render 'api/users/show'
     else
         render json: @user.errors.full_messages, status: 422

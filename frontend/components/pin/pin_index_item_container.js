@@ -1,16 +1,18 @@
 
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import PinIndexItem from "../board/board_index";
-import { editPin, deletePin } from "../../actions/board_actions";
+import PinIndexItem from "../pin/pin_index_item";
+import { editPin, deletePin } from "../../actions/pin_actions";
+import { openModal } from '../../actions/modal_actions';
 
 
 const mapDispatchToProps = dispatch => {
   // debugger
   return {
-  editPin: () => dispatch(editPin()),
-  deletePin: pinId => dispatch(deletePin(pinId))
-}};
+    editPin: () => dispatch(editPin()),
+    deletePin: pinId => dispatch(deletePin(pinId)),
+    // openModal: (type, props) => dispatch(openModal(type, props))
+  };};
 
 export default withRouter(connect(
   null,

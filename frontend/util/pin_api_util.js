@@ -5,13 +5,17 @@ export const fetchAllPins = () =>
   });
 
 export const createPin = pin => {
-  // debugger
+  debugger
   return $.ajax({
-    url: "/api/pins",
-    method: "POST",
-    data: { pin }
+        method: "POST",
+        url: "/api/pins",
+        data: pin,
+        contentType: false, 
+        processData: false  
   });
 };
+
+
 
 export const fetchPin = (id) =>
   $.ajax({
@@ -25,9 +29,9 @@ export const deletePin = pinId =>
     method: "DELETE"
   });
 
-export const editPin = pin =>
+export const editPin = pin => 
   $.ajax({
-    url: `/api/boards/${pin.id}`,
+    url: `/api/pins/${pin.id}`,
     method: "PATCH",
     data: { pin }
   });

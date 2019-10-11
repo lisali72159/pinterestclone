@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 
 class Profile extends React.Component {
   constructor(props){
-    // debugger
     super(props);
     this.state = {
       first_name: this.props.user.first_name,
@@ -39,7 +38,6 @@ class Profile extends React.Component {
     }
   }  
   redirect_edit(){
-    // debugger
     this.props.history.push('/edit')
   }
   
@@ -48,7 +46,6 @@ class Profile extends React.Component {
   }
 
   render(){
-    // debugger
     return (
       <>
 

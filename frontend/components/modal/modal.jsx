@@ -6,9 +6,10 @@ import BoardFormContainer from "../board/board_form_container";
 import EditBoardFormContainer from "../board/edit_board_form_container";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { withRouter } from 'react-router-dom';
+import EditPinFormContainer from '../pin/edit_pin_form_container';
 
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, props, closeModal }) {
 
   if (!modal) {
     return null;
@@ -24,21 +25,23 @@ function Modal({ modal, closeModal }) {
     case "createBoard":
       component = <BoardFormContainer />;
       break;
+    case "editBoard":
+      component = <EditBoardFormContainer id={props.id} />;
+      break;
+    case "editPin":
+      component = <EditPinFormContainer id={props.pinId} />;
+      break;
     default:
       return null;
   }
-  // debugger
   if (modal === "login" || modal === "signup") {
     return (
-      <>
       <div className="modal-background">
-    <div className="modal-child">{component}</div>
-    </div>
-    </>
+        <div className="modal-child">{component}</div>
+      </div>
     )
   } else {
     return (
-      
       <div className="modal-background" onClick={closeModal}>
         <div className="modal-child" onClick={e => e.stopPropagation()}>
           {component}
@@ -49,15 +52,17 @@ function Modal({ modal, closeModal }) {
 }
 
 const mapStateToProps = (state) => {
-  // debugger
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal.type,
+    props: state.ui.modal.props
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => {
+      return dispatch(closeModal())
+    }
   };
 };
 

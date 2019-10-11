@@ -43,8 +43,12 @@ export const createPin = pin => dispatch =>
 export const fetchPin = (pin) => dispatch =>
   PinApiUtil.fetchPin(pin).then(pin => dispatch(receivePin(pin)));
 
-export const editPin = pin => dispatch =>
-  PinApiUtil.editPin(pin).then(pin => dispatch(receivePin(pin)));
+export const editPin = pin => dispatch => {
+  return (
+    PinApiUtil.editPin(pin).then(pin => dispatch(receivePin(pin)))
+  )
+}
+  
 
 export const deletePin = pinId => dispatch =>
   PinApiUtil.deletePin(pinId).then(pin => dispatch(removePin(pinId)));

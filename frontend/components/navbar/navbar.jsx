@@ -3,7 +3,6 @@ import { Route, withRouter } from 'react-router-dom';
 
 class Navbar extends React.Component {
   constructor(props) {
-    // debugger
     super(props);
     this.state = {
       showMenu: false,
@@ -35,23 +34,19 @@ class Navbar extends React.Component {
   }  
   
   redirect_signup(){
-    // debugger
     this.props.logout();
     this.props.history.push('/');
   }
 
   redirect_profile(){
-    // debugger
     this.props.history.push('/profile')
   }
 
   redirect_edit() {
-    // debugger
     this.props.history.push('/edit')
   }
 
   redirect_feed(){
-    // debugger
     this.props.history.push('/')
   }
 

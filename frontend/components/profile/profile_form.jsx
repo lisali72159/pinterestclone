@@ -15,7 +15,6 @@ class ProfileForm extends React.Component {
   }
 
   update(field) {
-    // debugger
     return e =>
       this.setState({
         [field]: e.currentTarget.value
@@ -23,7 +22,6 @@ class ProfileForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
     // const formData = new FormData();
     
@@ -35,7 +33,6 @@ class ProfileForm extends React.Component {
   }
 
   renderErrors() {
-    // debugger
     return (
       <ul>
         {this.props.errors.map((error, i) => (

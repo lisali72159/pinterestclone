@@ -1,34 +1,27 @@
 class Api::PinsController < ApplicationController
   def create
-    # debugger
     @pin = Pin.new(pin_params)
     @pin.author_id = current_user.id
-    # debugger
     if @pin.save
-      # debugger
-      render json message: "Successfully uploaded!"
-      # render '/api/pins/index'
+      # render json message: "Successfully uploaded!"
+      render '/api/pins/show'
     else
-      # debugger
       render json: @pin.errors.full_messages, status: 401
-      # debugger
     end
   end
 
   def show
-    # debugger
     @pin = Pin.find(params[:id])
   end
 
   def index
-    # debugger
     @pins = Pin.all.includes(:author)
-    # debugger
     render '/api/pins/index'
   end
 
   def update
-    if @board.update(pin_params)
+    @pin = Pin.find(params[:id])
+    if @pin.update(pin_params)
         render 'api/pins/index'
     else
         render json: @pin.errors.full_messages, status: 422

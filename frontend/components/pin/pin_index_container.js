@@ -4,7 +4,6 @@ import { fetchAllPins } from "../../actions/pin_actions";
 
 const mapStateToProps = state => {
   let pins = state.entities.pins;
-  // debugger
 
   return { pins };
 };

@@ -5,10 +5,8 @@ import { withRouter } from "react-router-dom";
 
 
 const msp = (state) => {
-  // debugger
   const userId = state.session.currentUser;
   const user = state.entities.users[userId];
-  // debugger
   return { user };
 }
 

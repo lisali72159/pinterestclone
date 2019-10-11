@@ -1,18 +1,21 @@
 import React from 'react';
 
-class PinForm extends React.Component {
+class EditPinForm extends React.Component {
   constructor(props) {
-
     super(props);
     this.state = {
+      id: this.props.pin.id,
       title: this.props.pin.name,
       link: this.props.pin.link,
       description: this.props.pin.description,
     }
-    // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
+
+  // componentDidMount(){
+  //   this.props.fetchPin(this.props.pin);
+  // }
 
   update(field) {
     return e =>
@@ -22,9 +25,12 @@ class PinForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
-    this.props.editPin(this.state).then(() => this.props.history.push('/profile'));
+    e.stopPropagation();
+    this.props.editPin(this.state).then(() => {
+      // this.props.history.push('/profile');
+      this.props.closeModal();
+    });
   }
 
 
@@ -43,11 +49,11 @@ class PinForm extends React.Component {
     return (
       <>
         <div className="edit-form">
-          {/* <div onClick={this.props.closeModal} className="close-x">X</div> */}
+        
           {/* <span className="error-msg">{this.renderErrors()}</span> */}
 
           <div className="edit-pin-container">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
+            <form className="login-form-box">
               <h2 className="welcome">Edit your pin</h2>
 
               <div className="edit-form">
@@ -87,16 +93,15 @@ class PinForm extends React.Component {
                   className="pin-input"
 
                 />
-                <input className="red-button" type="submit" value="Save" />
-                <button className="gray-button">Cancel</button>
-                <br />
-                <button className="gray button">Delete</button>
+                <input className="red-button" type="submit" onClick={this.handleSubmit} value="Save" />
+                <button className="gray button" onClick={() => this.props.deletePin(this.props.pin.id)}>Delete</button>
 
 
                 <br></br>
 
               </div>
             </form>
+                <button className="gray-button" onClick={this.props.closeModal}>Cancel</button>
 
 
           </div>
@@ -106,4 +111,4 @@ class PinForm extends React.Component {
   }
 }
 
-export default PinForm;
+export default EditPinForm;

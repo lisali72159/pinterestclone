@@ -1,0 +1,1 @@
+json.extract! @pin, :title, :author_id, :id, :board_id, :title, :link, :description

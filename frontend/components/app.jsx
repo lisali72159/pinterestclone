@@ -26,9 +26,7 @@ const App = () => (
       <ProtectedRoute exact path="/pin-builder" component={PinFormContainer} />
       <ProtectedRoute exact path="/feed" component={PinIndexContainer} />     
     </header>
-    <body>
-      
-    </body>
+  
   </div>
 
 );
