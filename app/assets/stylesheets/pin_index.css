@@ -52,34 +52,14 @@
     color: #333
 }
 
-/* .editpin-logo{
-  height:20px;
-  width: 20px;
-} */
+
 .magic-button:hover{
   opacity: 0.8;
 }
 
 .pin-photo > h6 {
   margin: 0;
-
-/* .magic-button:hover {
-  display:inline-block;
-  z-index: 10;
-} */ 
-
-/* .edit-logo{
-  border-radius: 50%;
-  display: none;
-  overflow: hidden;
-  position:relative;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  background-color: red;
-  z-index:2;
-} */
-
+}
 
 
 

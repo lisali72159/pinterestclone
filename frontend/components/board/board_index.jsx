@@ -14,7 +14,7 @@ class BoardIndex extends React.Component {
     if (!this.props.boards) {
       return null;
     }
-    debugger
+    // debugger
     const boardIndexItems = Object.values(this.props.boards).map(board => {
       return <BoardIndexItem key={board.id} board={ board } boardId={board.id}/>
     });
