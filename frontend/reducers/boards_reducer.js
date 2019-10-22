@@ -6,7 +6,7 @@ const boardsReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_BOARD:
-      debugger
+      // debugger
       return Object.assign({}, state, {[action.board.id]: action.board});
     case RECEIVE_BOARDS:
       return action.boards;

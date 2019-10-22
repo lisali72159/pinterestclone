@@ -5,9 +5,9 @@ import { withRouter } from "react-router-dom";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  // debugger
   const pin = state.entities.pins[ownProps.pinId];
-  debugger
+  // debugger
   return { pin };
 };
 

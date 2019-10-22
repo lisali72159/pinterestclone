@@ -49,7 +49,7 @@ button.link:hover {
   width: 45px;
   object-fit: cover;
   border-radius: 50%;
-  /* padding: 0px; */
+
 }
 
 input {
@@ -114,7 +114,4 @@ h5{
   margin: 0;
 }
 
-/* 
-button.link span {
-  text-decoration: underline;
-} */
+

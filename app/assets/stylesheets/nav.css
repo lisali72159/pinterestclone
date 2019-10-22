@@ -17,13 +17,7 @@
   border-bottom: #efefef solid 1px;
 }
 
-.menu{
-  
-  /* display: flex;
-  flex-direction: column; */
-  /* height: fit-content; */
 
-}
 
 .nav-button{
   display: flex;
@@ -64,7 +58,7 @@
   width: 100px;
   cursor: pointer;
   border: none;
-  /* border-bottom: #efefef solid 2px; */
+ 
   border-radius: 8px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",

@@ -5,7 +5,7 @@ export const fetchAllPins = () =>
   });
 
 export const createPin = pin => {
-  debugger
+  // debugger
   return $.ajax({
         method: "POST",
         url: "/api/pins",
