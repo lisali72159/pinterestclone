@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # namespace :api do
     resources :users, only: [:create, :update, :show]
     resource :session, only: [:create, :destroy]
-    resources :boards, only: [:create, :update, :index, :destroy]
+    resources :boards, only: [:create, :update, :index, :destroy, :show]
     resources :pins, only: [:create, :update, :index, :destroy, :show]
   end
 

@@ -27,7 +27,7 @@ class EditPinForm extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     this.props.editPin(this.state).then(() => {
-      debugger
+      // debugger
       this.props.closeModal();
    
     });

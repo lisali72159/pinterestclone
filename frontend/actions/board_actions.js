@@ -39,16 +39,14 @@ export const fetchAllBoards = () => dispatch =>
 export const createBoard = board => dispatch => 
   BoardApiUtil.createBoard(board).then(board => dispatch(receiveBoard(board)));
 
-// export const fetchBoard = (board) => dispatch =>
+// export const fetchBoard = board => dispatch =>
 //   BoardApiUtil.fetchBoard(board).then(board => dispatch(receiveBoard(board)));
 
 export const editBoard = board => dispatch => {
   return (
     BoardApiUtil.editBoard(board).then(board => dispatch(receiveBoard(board))));
-  
 }
   
-
 export const deleteBoard = boardId => dispatch => {
   return (
     BoardApiUtil.deleteBoard(boardId).then(board => dispatch(removeBoard(boardId)))

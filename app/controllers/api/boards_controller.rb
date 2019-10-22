@@ -1,7 +1,4 @@
 class Api::BoardsController < ApplicationController
-
-  
-
   def create
     @board = Board.new(board_params)
     @board.author_id = current_user.id
@@ -15,6 +12,11 @@ class Api::BoardsController < ApplicationController
   def index
     @boards = current_user.authored_boards
     render '/api/boards/index'
+  end
+
+  def show
+    @board = Board.find(params[:id])
+    render 'api/boards/show'
   end
 
   def update

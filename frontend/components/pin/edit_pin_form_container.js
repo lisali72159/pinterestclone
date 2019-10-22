@@ -7,12 +7,11 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 const mapStateToProps = (state, ownProps) => {
   // debugger
   const pin = state.entities.pins[ownProps.id];
-  debugger
+  // debugger
   return { pin };
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchPin: pin => dispatch(fetchPin(pin)),
   editPin: pin => dispatch(editPin(pin)),
   deletePin: (pinId) => dispatch(deletePin(pinId)),
   openModal: (type, props) => dispatch(openModal(type, props)),
