@@ -5,17 +5,15 @@ class EditPinForm extends React.Component {
     super(props);
     this.state = {
       id: this.props.pin.id,
-      title: this.props.pin.name,
+      title: this.props.pin.title,
       link: this.props.pin.link,
       description: this.props.pin.description,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    
   }
 
-  // componentDidMount(){
-  //   this.props.fetchPin(this.props.pin);
-  // }
 
   update(field) {
     // debugger
@@ -29,8 +27,7 @@ class EditPinForm extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     this.props.editPin(this.state).then(() => {
-      // this.props.history.push('/profile');
-      // debugger
+      debugger
       this.props.closeModal();
    
     });
@@ -52,7 +49,7 @@ class EditPinForm extends React.Component {
     return (
       <>
         <div className="edit-form">
-        
+          <div onClick={this.props.closeModal} className="close-x">X</div>
           {/* <span className="error-msg">{this.renderErrors()}</span> */}
 
           <div className="edit-pin-container">

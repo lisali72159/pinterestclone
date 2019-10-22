@@ -36,8 +36,6 @@ class BoardIndexItem extends React.Component {
     return (
       <>
       <div className="board-container">
-        
-        
         <div className="title">{name}</div>
         <br/>
         <br/>

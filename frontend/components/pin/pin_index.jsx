@@ -1,5 +1,5 @@
 import React from 'react';
-import PinIndexItem from './pin_index_item';
+import PinIndexItemContainer from './pin_index_item_container';
 
 class PinIndex extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class PinIndex extends React.Component {
       return null;
     }
     const pinIndexItems = Object.values(this.props.pins).map(pin => {
-      return <PinIndexItem key={pin.id} pin={pin} />
+      return <PinIndexItemContainer key={pin.id} pin={pin} pinId={pin.id}/>
     });
 
     return (

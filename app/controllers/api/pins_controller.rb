@@ -20,11 +20,15 @@ class Api::PinsController < ApplicationController
   end
 
   def update
+    # debugger
     @pin = Pin.find(params[:id])
+    @board = Board.find(@pin.board_id)
+    # debugger
     if @pin.update(pin_params)
-        render 'api/pins/index'
+        render 'api/pins/show'
     else
         render json: @pin.errors.full_messages, status: 422
+        # debugger
     end  
   end
 

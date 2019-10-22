@@ -29,7 +29,7 @@ function Modal({ modal, props, closeModal }) {
       component = <EditBoardFormContainer id={props.id} />;
       break;
     case "editPin":
-      component = <EditPinFormContainer id={props.pinId} />;
+      component = <EditPinFormContainer id={props.id} />;
       break;
     default:
       return null;
