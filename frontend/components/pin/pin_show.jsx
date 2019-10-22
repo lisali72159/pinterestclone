@@ -20,15 +20,16 @@ class PinShow extends React.Component {
   render(){
     debugger
     if (!this.props.pin) {
-      return <div class="loader"></div>
+      return <div className="loader"></div>
     }
     return (
       <>
       <div className="pin-container">
-        <img src={this.props.pin.photo_url}/>
-          <div>
+        <div id='pin-image'><img src={this.props.pin.photo_url}/></div>
+          <div id="pin-info">
            <h4>{this.props.pin.title}</h4>
-            <h4>{this.props.pin.link}</h4>
+            <a href= {`https://${this.props.pin.link}`} target="_blank">{this.props.pin.link}</a>
+            <button><img className="board-logo" src={window.editURL} /></button>
           </div>
       </div>
       </>
