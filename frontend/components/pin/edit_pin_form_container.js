@@ -5,9 +5,9 @@ import { withRouter } from "react-router-dom";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
+  debugger
   const pin = state.entities.pins[ownProps.pinId];
-  // debugger
+  debugger
   return { pin };
 };
 
@@ -17,9 +17,9 @@ const mapDispatchToProps = dispatch => ({
   deletePin: (pinId) => dispatch(deletePin(pinId)),
   openModal: (type, props) => dispatch(openModal(type, props)),
   closeModal: () => dispatch(closeModal())
-  
   // clearErrors: () => dispatch(clearErrors())
 });
+
 
 export default withRouter(
   connect(

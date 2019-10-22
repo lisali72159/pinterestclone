@@ -18,6 +18,7 @@ class EditPinForm extends React.Component {
   // }
 
   update(field) {
+    debugger
     return e =>
       this.setState({
         [field]: e.currentTarget.value
@@ -29,7 +30,9 @@ class EditPinForm extends React.Component {
     e.stopPropagation();
     this.props.editPin(this.state).then(() => {
       // this.props.history.push('/profile');
+      debugger
       this.props.closeModal();
+   
     });
   }
 

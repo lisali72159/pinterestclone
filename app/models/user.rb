@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  require 'bcrypt'
 
   attr_reader :password
 
