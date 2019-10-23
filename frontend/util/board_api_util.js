@@ -12,6 +12,12 @@ export const createBoard = board => {
     }))
   };
 
+  export const fetchBoard = boardId =>
+  $.ajax({
+    url: `/api/boards/${boardId}`,
+    method: "GET",
+  });
+
 export const deleteBoard = boardId =>
   $.ajax({
     url: `/api/boards/${boardId}`,

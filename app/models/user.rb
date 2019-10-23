@@ -35,11 +35,8 @@ class User < ApplicationRecord
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
-  
-  
   def self.generate_session_token
     SecureRandom::urlsafe_base64
-    
   end
 
   def ensure_session_token
@@ -51,8 +48,6 @@ class User < ApplicationRecord
     self.save!  
     self.session_token
   end
-
-
 
   def set_username
     self.first_name = self.email.split("@")[0]

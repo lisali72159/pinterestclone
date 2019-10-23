@@ -1,7 +1,6 @@
 import React from 'react';
-import NavbarContainer from '../navbar/navbar_container';
 import { withRouter } from 'react-router-dom';
-import { fetchPin } from '../../actions/pin_actions';
+
 
 class PinShow extends React.Component {
   constructor(props){
