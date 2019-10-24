@@ -20,7 +20,8 @@ class Api::BoardsController < ApplicationController
   end
 
   def update
-    @board = current_user.authored_boards.find(params[:id])
+    @board = current_user.authored_boards.find(params[:board][:id])
+    # debugger
     if @board.update(board_params)
         render 'api/boards/show'
     else
@@ -37,7 +38,7 @@ class Api::BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:author_id, :name)
+    params.require(:board).permit(:author_id, :name, :description)
   end
 
 end

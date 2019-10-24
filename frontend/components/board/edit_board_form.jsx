@@ -49,6 +49,7 @@ class BoardForm extends React.Component {
 
 
   render() {
+    debugger
     return (
       <>
         <div className="edit-form">
@@ -77,7 +78,7 @@ class BoardForm extends React.Component {
                 <br/>
                 <input
                   type="text"
-                  value={this.state.description}
+                  value={this.props.description}
                   onChange={this.update("description")}
                   className="board-input"
 

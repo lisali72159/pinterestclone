@@ -12,6 +12,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PinFormContainer from './pin/pin_form_container';
 import PinIndexContainer from './pin/pin_index_container';
 import PinShowContainer from './pin/pin_show_container';
+import BoardShowContainer from './board/board_show_container';
 
 
 
@@ -26,7 +27,10 @@ const App = () => (
       <ProtectedRoute exact path="/edit" component={ProfileFormContainer} />
       <ProtectedRoute exact path="/pin-builder" component={PinFormContainer} />
       <ProtectedRoute exact path="/feed" component={PinIndexContainer} />   
-      <ProtectedRoute exact path="/pins/:id" component={PinShowContainer} />   
+      <ProtectedRoute exact path="/pins/:id" component={PinShowContainer} /> 
+      <ProtectedRoute exact path="/boards/:id" component={BoardShowContainer} /> 
+
+
 
     </header>
   

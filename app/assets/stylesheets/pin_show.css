@@ -1,0 +1,28 @@
+.loader{
+  margin: 0 auto;
+  width: 10%;
+  height: 10%
+}
+
+.pin-container{
+  width: 60%;
+  height: auto;
+  border-radius: 30px;
+  border: 2px solid black;
+}
+
+#pin-image{
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+
+#pin-info{
+  display: block;
+}
+
+#back{
+  width: 10%;
+  height: 10%;
+  border: none;
+}

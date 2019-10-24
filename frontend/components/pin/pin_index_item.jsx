@@ -17,12 +17,12 @@ class PinIndexItem extends React.Component {
 
   redirect(){
     const pin = this.props.pin;
-    debugger
+    // debugger
     this.props.history.push(`/pins/${pin.id}`)
   }
   
   render() {
-    debugger
+    // debugger
     const photo = this.props.pin.photo_url ? <img src={this.props.pin.photo_url} onClick={this.redirect} /> : "No photo";
     return (
       <>

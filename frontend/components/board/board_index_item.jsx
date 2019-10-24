@@ -22,20 +22,19 @@ const mapDispatchToProps = dispatch => {
 class BoardIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: this.props.board.name,
-      id: this.props.board.id,
-    }
+    this.redirect_pins = this.redirect_pins.bind(this);
   }
 
+  redirect_pins(){
+    this.props.history.push(`/boards/${this.props.board.id}`)
+  }
  
-
   render() {
     
     let {name} = this.props.board
     return (
       <>
-      <div className="board-container">
+      <div className="board-container" onClick={this.redirect_pins}>
         <div className="title">{name}</div>
         <br/>
         <br/>
@@ -46,16 +45,9 @@ class BoardIndexItem extends React.Component {
   }
 }
 
-// export default BoardIndexItem;
-
 export default withRouter(
   connect(
     null,
     mapDispatchToProps
   )(BoardIndexItem)
 );
-
-
-
-
-// onClick={this.props.editBoard(this.props.board)}

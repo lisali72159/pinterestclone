@@ -6,7 +6,6 @@ import { withRouter } from "react-router-dom";
 
 
 const mapStateToProps = (state, ownProps) => {
- 
    const board = state.entities.boards[ownProps.id]; 
    return { board }
 };

@@ -1,23 +1,52 @@
 import React from 'react';
+import PinIndexItemContainer from '../pin/pin_index_item_container';
 
 
 class BoardShow extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      name: this.props.board.name,
-      descrption: this.props.board.description,
+      showMenu: false
     }
+    this.showMenu = this.showMenu.bind(this);
   }
 
   componentDidMount(){
+    debugger
     this.props.fetchBoard(this.props.match.params.id)
   }
 
-  render(){
-    <>
 
-      
+  showMenu(e) {
+    e.persist();
+    e.stopPropagation();
+    if (e.target.className === 'profile-button' && this.state.showMenu) {
+      return this.closeMenu(e);
+    }
+    this.setState({ showMenu: true })
+  }
+
+  closeMenu(e) {
+    if (!e.relatedTarget || e.currentTarget.className === 'profile-button') {
+      return this.setState({ showMenu: false });
+
+    }
+  }  
+
+  render(){
+    debugger
+    if (!this.props.board.pins) {
+      debugger
+      return <div className="loader"></div>
+    }
+
+    debugger
+    const boardPins = Object.values(this.props.board.pins).map(pin => {
+      return <PinIndexItemContainer key={pin.id} pin={pin} pinId={pin.id} />
+    });
+
+    return (
+    <>
     <div className="profile-container">
       <div className="profile-buttons-container">
             <div className="sub-menu-container">
@@ -27,11 +56,7 @@ class BoardShow extends React.Component {
             {this.state.showMenu ? (
               
               <div className="sub-menu">
-                
-                <button className="sub-menu-buttons" onClick={this.props.createBoard}>Create Board</button>
-                
                 <button className="sub-menu-buttons" onClick={this.redirect_pin}>Create Pin</button>
-             
               </div>
             )
             : (null)
@@ -46,9 +71,18 @@ class BoardShow extends React.Component {
     <br/>
       
       <div className="board-info">
-        <h2>{this.props.name}</h2>
-        <h5>{this.props.description}</h5>
+        <h2>{this.props.board.name}</h2>
+        <h5>{this.props.board.description}</h5>
       </div>
+
+        <div className="boards-container">
+          <ul>
+            { boardPins }
+          </ul>
+        </div>
     </>
+    )
   }
 }
+
+export default BoardShow;
