@@ -7,14 +7,11 @@
 .pin-container{
   width: 60%;
   height: auto;
-  border-radius: 30px;
-  border: 2px solid black;
-}
-
-#pin-image{
-  display: block;
-  width: inherit;
-  height: inherit;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 0px 3px 3px #bdbbbb;
+  padding: 20px;
+  margin: 40px auto;
 }
 
 #pin-info{
@@ -22,7 +19,22 @@
 }
 
 #back{
-  width: 10%;
-  height: 10%;
+  display: inline-block;
   border: none;
+  border-radius: 50%;
+  padding: 0px;
+  cursor: pointer;
+}
+
+#back > img{
+  width: 30px;
+  height: inherit;
+}
+
+#pin-image > img{
+  width: 40%;
+  height: auto;
+  border: none;
+  cursor: pointer;
+  border-radius: 10%;
 }

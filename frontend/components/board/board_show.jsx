@@ -84,10 +84,9 @@ class BoardShow extends React.Component {
         <h5>{this.props.board.description}</h5>
       </div>
 
-        <div className="boards-container">
-          <ul>
+
+        <div className="masonry">
             { boardPins }
-          </ul>
         </div>
     </>
     )

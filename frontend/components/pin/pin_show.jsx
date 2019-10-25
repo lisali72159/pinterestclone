@@ -25,8 +25,8 @@ class PinShow extends React.Component {
     }
     return (
       <>
+      <button id="back" onClick={this.redirect_feed}> <img src={window.backURL}></img></button>
       <div className="pin-container">
-        <button id="back" onClick={this.redirect_feed}> <img src={window.backURL}></img></button>
         <div id='pin-image'><img src={this.props.pin.photo_url}/></div>
           <div id="pin-info">
            <h4>{this.props.pin.title}</h4>
