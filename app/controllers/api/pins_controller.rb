@@ -12,6 +12,10 @@ class Api::PinsController < ApplicationController
 
   def show
     @pin = Pin.find(params[:id])
+    # debugger
+    @board = Board.find(@pin.board_id).name
+    # debugger
+    @author = User.find(@pin.author_id).first_name
     render '/api/pins/show'
   end
 

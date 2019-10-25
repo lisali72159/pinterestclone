@@ -73,7 +73,7 @@ class BoardShow extends React.Component {
           </div>
             <div>
               <button className="profile-buttons" onClick={() => this.props.openModal('editBoard', { id: this.props.board.id })}><img src={window.pencilURL} /></button>
-          <button className="profile-buttons"> <img src={window.uploadURL}></img></button>
+          <button className="profile-buttons"><img src={window.uploadURL}></img></button>
           </div>
       </div>
     </div>
@@ -84,10 +84,12 @@ class BoardShow extends React.Component {
         <h5>{this.props.board.description}</h5>
       </div>
 
-
+      <div className="pins">
         <div className="masonry">
             { boardPins }
+            {/* <button className="magic-button" onClick={() => this.props.openModal('editPin', { id: this.props.pin.id })}><img className='editform-logo' src={window.editURL} /></button> */}
         </div>
+      </div>
     </>
     )
   }

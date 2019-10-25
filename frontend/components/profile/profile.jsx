@@ -47,50 +47,48 @@ class Profile extends React.Component {
   render(){
     return (
       <>
-
-      
-    <div className="profile-container">
-      <div className="profile-buttons-container">
-            <div className="sub-menu-container">
-            <button className="profile-buttons" onClick={this.showMenu} onBlur={this.closeMenu} tabIndex="0"> 
-              <img src={window.plusURL}></img>
-            </button>
-            {this.state.showMenu ? (
+      <div className="profile-container">
+        <div className="profile-buttons-container">
+              <div className="sub-menu-container">
+              <button className="profile-buttons" onClick={this.showMenu} onBlur={this.closeMenu} tabIndex="0"> 
+                <img src={window.plusURL}></img>
+              </button>
+              {this.state.showMenu ? (
+                
+                <div className="sub-menu">
+                  
+                  <button className="sub-menu-buttons" onClick={this.props.createBoard}>Create Board</button>
+                  
+                  <button className="sub-menu-buttons" onClick={this.redirect_pin}>Create Pin</button>
               
-              <div className="sub-menu">
-                
-                <button className="sub-menu-buttons" onClick={this.props.createBoard}>Create Board</button>
-                
-                <button className="sub-menu-buttons" onClick={this.redirect_pin}>Create Pin</button>
-             
-              </div>
-            )
-            : (null)
-          }
-          </div>
-            <div>
-          <button onClick={this.redirect_edit} className="profile-buttons"> <img src={window.pencilURL}></img></button>
-          <button className="profile-buttons"> <img src={window.uploadURL}></img></button>
-          </div>
-      </div>
-      <br/>
-      
-      <div className="user-info">
-        <h2>{this.state.first_name} {this.state.last_name}</h2> 
-        <h5>{this.state.description}</h5>
-        <h5>{this.state.location}</h5>
-        <h5>0 followers • 0 following</h5>
-      </div>
-      
-      <div className="pfp">
-            <img src={window.defaultpfpURL}></img>
-      </div>
-      
+                </div>
+              )
+              : (null)
+            }
+            </div>
+              <div>
+            <button onClick={this.redirect_edit} className="profile-buttons"> <img src={window.pencilURL}></img></button>
+            <button className="profile-buttons"> <img src={window.uploadURL}></img></button>
+            </div>
+        </div>
+        <br/>
+        
+        <div className="user-info">
+          <h2>{this.state.first_name} {this.state.last_name}</h2> 
+          <h5>{this.state.description}</h5>
+          <h5>{this.state.location}</h5>
+          <h5>0 followers • 0 following</h5>
+        </div>
+        
+        <div className="pfp">
+              <img src={window.defaultpfpURL}></img>
+        </div>
+        
 
-       <BoardIndexContainer />
-      
-      
-    </div>
+        <BoardIndexContainer />
+        
+        
+      </div>
     </>
   );
   }
