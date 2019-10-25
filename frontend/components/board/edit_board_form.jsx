@@ -22,13 +22,8 @@ class BoardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const user = Object.assign({}, this.state);
-    // this.props.editBoard(this.state).then(() => this.props.history.push('/profile'));
-    
     this.props.editBoard(this.state).then(() => {
-      // e.stopPropagation();
       this.props.closeModal();
-      // this.props.history.push('/profile');
     });
   }
 
@@ -78,7 +73,7 @@ class BoardForm extends React.Component {
                 <br/>
                 <input
                   type="text"
-                  value={this.props.description}
+                  value={this.state.description}
                   onChange={this.update("description")}
                   className="board-input"
 
@@ -87,7 +82,7 @@ class BoardForm extends React.Component {
                 <br/>
                 <button className="gray-button" onClick={this.props.closeModal}>Cancel</button>
                
-                <button className = "gray button" onClick= {this.delete}>Delete</button>
+                <Link to='/profile' className="gray-button" onClick={this.delete}>Delete</Link>
                 
                 
                 <br></br>

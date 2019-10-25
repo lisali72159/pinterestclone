@@ -13,7 +13,9 @@ class BoardShow extends React.Component {
 
   componentDidMount(){
     debugger
-    this.props.fetchBoard(this.props.match.params.id)
+    this.props.fetchBoard(this.props.match.params.id);
+    this.redirect_edit = this.redirect_edit.bind(this);
+    this.redirect_pin = this.redirect_pin.bind(this);
   }
 
 
@@ -29,18 +31,25 @@ class BoardShow extends React.Component {
   closeMenu(e) {
     if (!e.relatedTarget || e.currentTarget.className === 'profile-button') {
       return this.setState({ showMenu: false });
-
     }
   }  
 
+  redirect_edit() {
+    this.props.history.push('/edit')
+  }
+
+  redirect_pin() {
+    this.props.history.push('/pin-builder')
+  }
+
   render(){
     debugger
-    if (!this.props.board.pins) {
+    if (!this.props.board || !this.props.board.pins) {
       debugger
       return <div className="loader"></div>
     }
 
-    debugger
+    // debugger
     const boardPins = Object.values(this.props.board.pins).map(pin => {
       return <PinIndexItemContainer key={pin.id} pin={pin} pinId={pin.id} />
     });
@@ -63,7 +72,7 @@ class BoardShow extends React.Component {
           }
           </div>
             <div>
-          <button onClick={this.redirect_edit} className="profile-buttons"> <img src={window.pencilURL}></img></button>
+              <button className="profile-buttons" onClick={() => this.props.openModal('editBoard', { id: this.props.board.id })}><img src={window.pencilURL} /></button>
           <button className="profile-buttons"> <img src={window.uploadURL}></img></button>
           </div>
       </div>

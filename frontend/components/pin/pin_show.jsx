@@ -5,15 +5,11 @@ import { withRouter } from 'react-router-dom';
 class PinShow extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      // title: this.props.pin.title,
-      // pin: this.props.pin
-    }
     this.redirect_feed = this.redirect_feed.bind(this);
   }
 
   componentDidMount() {
-    debugger
+    // debugger
     this.props.fetchPin(this.props.match.params.id)
   }
 

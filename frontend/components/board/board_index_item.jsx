@@ -6,16 +6,11 @@ import { editBoard, deleteBoard } from "../../actions/board_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import EditBoardFormContainer  from './edit_board_form_container';
 
-// const mapStateToProps = state => {
-//   const boards = state.entities.boards
-// }
 
 const mapDispatchToProps = dispatch => {
   return {
-  editBoard: () => dispatch(openModal("editBoard")),
+  editBoard: (id) => dispatch(openModal("editBoard", {id})),
   deleteBoard: boardId => dispatch(deleteBoard(boardId)),
-  openModal: (type, props) => dispatch(openModal(type, props)),
-  
 }};
 
 
@@ -23,6 +18,12 @@ class BoardIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.redirect_pins = this.redirect_pins.bind(this);
+    this.openEdit = this.openEdit.bind(this)
+  }
+
+  openEdit(e){
+    e.stopPropagation();
+    this.props.editBoard(this.props.board.id)
   }
 
   redirect_pins(){
@@ -38,7 +39,7 @@ class BoardIndexItem extends React.Component {
         <div className="title">{name}</div>
         <br/>
         <br/>
-          <button className='edit-button' onClick={() => this.props.openModal('editBoard', {id: this.props.board.id})}><img className="board-logo" src={window.editURL} /></button>
+          <button className='edit-button' onClick={this.openEdit}><img className="board-logo" src={window.editURL} /></button>
         </div>
       </>
     )

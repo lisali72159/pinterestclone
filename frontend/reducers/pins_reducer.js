@@ -1,5 +1,6 @@
 
 import { RECEIVE_PINS, RECEIVE_PIN, REMOVE_PIN } from "../actions/pin_actions";
+import { RECEIVE_BOARD } from '../actions/board_actions';
 
 
 const pinsReducer = (state = {}, action) => {

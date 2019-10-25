@@ -34,7 +34,6 @@ class Profile extends React.Component {
   closeMenu(e) {
     if (!e.relatedTarget || e.currentTarget.className === 'profile-button') {
       return this.setState({ showMenu: false });
-
     }
   }  
   redirect_edit(){
