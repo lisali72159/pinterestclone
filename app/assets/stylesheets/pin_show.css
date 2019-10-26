@@ -93,11 +93,6 @@ button {
   outline:none;
 }
 
-.edit-pin-button{
-  position:relative;
-  
-  border: none;
-  border-radius: 50%;
-  padding:5px;
-  left: 220px;
+.red-button > #edit{
+ justify-content: center;
 }

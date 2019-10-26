@@ -7,7 +7,7 @@ import { openModal } from '../../actions/modal_actions'
 const msp = (state, ownProps) => {
   const pin = state.entities.pins[ownProps.match.params.id];
   debugger
-  // const board = pin.board;
+  // const boards = state.entities.boards
   return { pin }
 }
 
