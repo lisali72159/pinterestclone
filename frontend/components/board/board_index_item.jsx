@@ -31,7 +31,7 @@ class BoardIndexItem extends React.Component {
   }
  
   render() {
-    
+    debugger
     let {name} = this.props.board
     return (
       <>
