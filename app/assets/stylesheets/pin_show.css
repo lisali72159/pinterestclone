@@ -93,6 +93,9 @@ button {
   outline:none;
 }
 
-.red-button > #edit{
- justify-content: center;
+#edit{
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
+

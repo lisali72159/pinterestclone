@@ -23,7 +23,6 @@ class PinForm extends React.Component {
         [field]: e.currentTarget.value
       });
     }
-      
   }
 
   handleFile(e){
@@ -38,8 +37,8 @@ class PinForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('pin[title]', this.state.title);
-    formData.append('pin[link]', this.state.id);
-    formData.append('pin[description]', this.state.id);
+    formData.append('pin[link]', this.state.link);
+    formData.append('pin[description]', this.state.description);
     formData.append('pin[id]', this.state.id);
     formData.append('pin[author_id]', this.state.author_id);
     formData.append('pin[board_id]', this.state.board_id);
@@ -47,7 +46,7 @@ class PinForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('pin[photo]', this.state.photoFile);
     }
-    // debugger
+    debugger
     this.props.createPin(formData).then(() => {
       this.props.history.push('/feed');
     });

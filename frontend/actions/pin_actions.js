@@ -11,10 +11,12 @@ const receivePins = pins => ({
   pins
 });
 
-const receivePin = pin => {
+const receivePin = payload => {
   return {
   type: RECEIVE_PIN,
-  pin
+  pin: payload.pin,
+  board: payload.board,
+  author: payload.author,
   }
 };
 
@@ -43,7 +45,7 @@ export const createPin = pin => dispatch =>
   PinApiUtil.createPin(pin).then(pin => dispatch(receivePin(pin)));
 
 export const fetchPin = (id) => dispatch =>
-  PinApiUtil.fetchPin(id).then(pin => dispatch(receivePin(pin)));
+  PinApiUtil.fetchPin(id).then(payload => dispatch(receivePin(payload)));
 
 export const editPin = pin => dispatch => {
   return (
