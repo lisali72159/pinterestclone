@@ -68,12 +68,12 @@ class PinShow extends React.Component {
     formData.append('pin[board_id]', board_id)
     formData.append('pin[photo]', photo);
     
-    debugger
+    // debugger
   //   this.props.createPin(formData);
   }
-
+  
   render(){
-    debugger
+    // debugger
     if (!this.props.pin || !this.props.board) {
       return <div className="loader"></div>
     }

@@ -45,7 +45,7 @@ class BoardForm extends React.Component {
 
 
   render() {
-    debugger
+    // debugger
     return (
       <>
         <div className="edit-form">

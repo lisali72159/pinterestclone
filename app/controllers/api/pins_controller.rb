@@ -1,11 +1,8 @@
 class Api::PinsController < ApplicationController
   def create
-    debugger
     @pin = Pin.new(pin_params)
     @pin.author_id = current_user.id
-    debugger
     if @pin.save
-
       # render json message: "Successfully uploaded!"
       render '/api/pins/show'
     else

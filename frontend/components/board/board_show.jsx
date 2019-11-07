@@ -12,7 +12,7 @@ class BoardShow extends React.Component {
   }
 
   componentDidMount(){
-    debugger
+    // debugger
     this.props.fetchBoard(this.props.match.params.id);
     this.redirect_edit = this.redirect_edit.bind(this);
     this.redirect_pin = this.redirect_pin.bind(this);
@@ -43,9 +43,9 @@ class BoardShow extends React.Component {
   }
 
   render(){
-    debugger
+    // debugger
     if (!this.props.board || !this.props.board.pins) {
-      debugger
+      // debugger
       return <div className="loader"></div>
     }
 

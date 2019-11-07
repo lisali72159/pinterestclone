@@ -46,7 +46,7 @@ class PinForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('pin[photo]', this.state.photoFile);
     }
-    debugger
+    // debugger
     this.props.createPin(formData).then(() => {
       this.props.history.push('/feed');
     });

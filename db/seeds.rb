@@ -16,7 +16,7 @@ board3 = Board.create({author_id: demouser.id, name: "Kim Possible"})
 board4 = Board.create({author_id: demouser.id, name: "Kim Kardashian"})
 board5 = Board.create({author_id: demouser.id, name: "Kimbap"})
 
-pin1 = Pin.create({author_id: demouser.id, board_id: board1.id, title:"wow kimchi", link:"recipes.com", description:"hola"})
+pin1 = Pin.create({author_id: demouser.id, board_id: board1.id, title:"wow kimchi", link:"google.com", description:"hola"})
 file = open('https://kim-seeds.s3.amazonaws.com/k4.jpg')
 pin1.photo.attach(io: file, filename: 'k4.jpg')
 pin1.save!

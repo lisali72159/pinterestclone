@@ -6,7 +6,7 @@ import { openModal } from '../../actions/modal_actions';
 const msp = (state, ownProps) => {
   // debugger
   const board = state.entities.boards[ownProps.match.params.id];
-  debugger
+  // debugger
   return { board }
 }
 

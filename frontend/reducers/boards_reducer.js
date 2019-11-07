@@ -10,11 +10,11 @@ const boardsReducer = (state = {}, action) => {
       // debugger
       return Object.assign({}, state, {[action.board.id]: action.board});
     case RECEIVE_PIN: {
-      debugger
+      // debugger
       return Object.assign({}, state, {[action.board.id]: action.board})
     }
     case RECEIVE_BOARDS:
-      debugger
+      // debugger
       return action.boards;
     case REMOVE_BOARD:
       newState = merge({}, state);
