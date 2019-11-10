@@ -54,3 +54,5 @@ class User < ApplicationRecord
   end
 
 end
+
+#Fix password digest error.
