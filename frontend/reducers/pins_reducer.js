@@ -12,6 +12,12 @@ const pinsReducer = (state = {}, action) => {
       return action.pins;
     case REMOVE_PIN:
       return null;
+    case RECEIVE_BOARD:
+      let newState = {};
+      action.pins.forEach(pin => {
+        newState[pin.id] = pin;
+      })
+      return newState;
     default:
       return state;
   }

@@ -15,6 +15,7 @@ class PinIndex extends React.Component {
       return null;
     }
     const pinIndexItems = Object.values(this.props.pins).map(pin => {
+      debugger
       return <PinIndexItemContainer key={pin.id} pin={pin} pinId={pin.id}/>
     });
     // debugger

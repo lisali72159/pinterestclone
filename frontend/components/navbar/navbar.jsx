@@ -60,7 +60,7 @@ class Navbar extends React.Component {
        
         <button className="nav-button">Following</button>
        
-        <button className="nav-button" onClick={this.redirect_profile}>L</button>
+        <button className="nav-button" onClick={this.redirect_profile}>Profile</button>
         <div>
           <button className="nav-button" onClick={this.showMenu} onBlur={this.closeMenu} tabIndex = "0">
             <img src={window.menuURL}></img>
