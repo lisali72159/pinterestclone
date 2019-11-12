@@ -17,7 +17,8 @@ class User < ApplicationRecord
   has_many :pins,
     foreign_key: :author_id
   
-  has_many :follows, :as => :followable
+  # has_many :follows, :as => :followable
+
 
 
   def self.find_by_credentials(email, password)

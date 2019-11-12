@@ -15,13 +15,13 @@ class PinIndex extends React.Component {
       return null;
     }
     const pinIndexItems = Object.values(this.props.pins).map(pin => {
-      debugger
+      // debugger
       return <PinIndexItemContainer key={pin.id} pin={pin} pinId={pin.id}/>
     });
     // debugger
     return (
       <div className="masonry">
-        <div className="pin-photo">
+        <div className="pin-photoz">
             {pinIndexItems}
         </div>
       </div>

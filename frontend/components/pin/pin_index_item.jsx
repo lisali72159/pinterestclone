@@ -7,7 +7,7 @@ class PinIndexItem extends React.Component {
   constructor(props) {
     // debugger
     super(props);
-    debugger
+    // debugger
     this.state = {
       title: this.props.pin.title,
       id: this.props.pin.id
@@ -25,7 +25,7 @@ class PinIndexItem extends React.Component {
   render() {
     // debugger
     const photo = this.props.pin.photo_url ? <img src={this.props.pin.photo_url} onClick={this.redirect} /> : "No photo";
-    debugger
+    // debugger
     return (
       <>
       <div className="pin-photo">

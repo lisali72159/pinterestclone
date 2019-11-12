@@ -3,7 +3,7 @@ import React from 'react';
 class EditPinForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+    // debugger
     this.state = {
       id: this.props.pin.id,
       title: this.props.pin.title,

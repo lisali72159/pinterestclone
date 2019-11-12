@@ -6,19 +6,52 @@ class BoardShow extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showMenu: false
+      showMenu: false,
+      boardPins: null,
     }
     this.showMenu = this.showMenu.bind(this);
+    this.isEquivalent = this.isEquivalent.bind(this);
   }
 
   componentDidMount(){
     // debugger
-    this.props.fetchBoard(this.props.match.params.id);
+    this.props.fetchBoard(this.props.match.params.id).then( res => this.setState({boardPins: res}));
     this.redirect_edit = this.redirect_edit.bind(this);
     this.redirect_pin = this.redirect_pin.bind(this);
   }
+  
+  componentDidUpdate(prevProps, prevState){
+    debugger
+    if (!this.isEquivalent(prevProps.pins, this.props.pins)) {
+      debugger
+      this.props.fetchBoard(this.props.match.params.id).then(res => this.setState({ boardPins: res }));
+    }
+  }
 
 
+  isEquivalent(a, b){
+    debugger
+    var aProps = Object.getOwnPropertyNames(a);
+    
+    var bProps = Object.getOwnPropertyNames(b);
+
+    if (aProps.length != bProps.length) {
+      return false;
+    }
+
+    for (var i = 0; i < aProps.length; i++) {
+      var propName = aProps[i];
+
+      
+      if (a[propName] !== b[propName]) {
+        return false;
+      }
+    }
+
+    return true;
+  
+  }
+  
   showMenu(e) {
     e.persist();
     e.stopPropagation();
@@ -43,17 +76,21 @@ class BoardShow extends React.Component {
   }
 
   render(){
-    // debugger
-    if (!this.props.board || !this.props.board.pins) {
-      // debugger
-      return <div className="loader"></div>
-    }
+    debugger
+    // if (!this.props.board || !this.props.board.pins) {
+    //   debugger
+    //   return <div className="loader"></div>
+    // }
 
-    // debugger
-    const boardPins = Object.values(this.props.board.pins).map(pin => {
-      return <PinIndexItemContainer key={pin.id} pin={pin} pinId={pin.id} />
-    });
-
+    debugger
+    let boardPins;
+      if (this.state.boardPins) {
+         boardPins = Object.values(this.state.boardPins.pins).map(pin => {
+          return <PinIndexItemContainer key={pin.id} pin={pin} pinId={pin.id} />
+        });
+      }
+   
+    debugger
     return (
     <>
     <div className="profile-container">
@@ -79,15 +116,16 @@ class BoardShow extends React.Component {
     </div>
     <br/>
       
-      <div className="board-info">
-        <h2>{this.props.board.name}</h2>
-        <h5>{this.props.board.description}</h5>
-      </div>
+      
+      
+      {boardPins && <div className="board-info">
+        <h2>{this.state.boardPins.board.name} </h2>
+          <h5>{this.state.boardPins.board.description}</h5>
+      </div>}
 
       <div className="pins">
         <div className="masonry">
             { boardPins }
-            {/* <button className="magic-button" onClick={() => this.props.openModal('editPin', { id: this.props.pin.id })}><img className='editform-logo' src={window.editURL} /></button> */}
         </div>
       </div>
     </>

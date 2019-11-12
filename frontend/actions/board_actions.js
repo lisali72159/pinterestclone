@@ -12,7 +12,7 @@ const receiveBoards = boards => ({
 });
 
 const receiveBoard = board => {
-  debugger
+  // debugger
   return {
     type: RECEIVE_BOARD,
     board: board,

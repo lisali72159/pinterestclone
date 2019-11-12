@@ -7,7 +7,8 @@ const msp = (state, ownProps) => {
   // debugger
   const board = state.entities.boards[ownProps.match.params.id];
   // debugger
-  return { board }
+  const pins = Object.values(state.entities.pins).filter(pin => pin.board_id === board.id);
+  return { board, pins }
 }
 
 const mdp = dispatch => ({

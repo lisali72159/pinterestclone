@@ -1,12 +1,10 @@
 .splash > img {
-  height: 70%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  margin-left: 85px;
+  margin-left: 0px;
   justify-content: center;
-
-  display: flex;
   align-items: center;
 }
 

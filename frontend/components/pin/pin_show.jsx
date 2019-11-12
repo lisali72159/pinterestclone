@@ -22,7 +22,8 @@ class PinShow extends React.Component {
 
 
   redirect_feed() {
-    this.props.history.push('/feed')
+    debugger
+    this.props.history.goBack();
   }
 
   update(field) {

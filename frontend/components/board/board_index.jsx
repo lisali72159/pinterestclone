@@ -10,6 +10,7 @@ class BoardIndex extends React.Component {
     this.props.fetchAllBoards();
   }
 
+
   render(){
     if (!this.props.boards) {
       return null;
@@ -24,7 +25,7 @@ class BoardIndex extends React.Component {
        
         <div className="sub-nav">
           <button className="board-button">Boards</button>
-          {/* <button className="board-button">Pins</button> */}
+          {/* <button className="board-button" >Pins</button> */}
         </div>
 
         <div className="boards-container">
