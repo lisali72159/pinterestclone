@@ -14,23 +14,22 @@ class BoardShow extends React.Component {
   }
 
   componentDidMount(){
-    // debugger
     this.props.fetchBoard(this.props.match.params.id).then( res => this.setState({boardPins: res}));
     this.redirect_edit = this.redirect_edit.bind(this);
     this.redirect_pin = this.redirect_pin.bind(this);
   }
   
   componentDidUpdate(prevProps, prevState){
-    debugger
+    // debugger
     if (!this.isEquivalent(prevProps.pins, this.props.pins)) {
-      debugger
+      // debugger
       this.props.fetchBoard(this.props.match.params.id).then(res => this.setState({ boardPins: res }));
     }
   }
 
 
   isEquivalent(a, b){
-    debugger
+    // debugger
     var aProps = Object.getOwnPropertyNames(a);
     
     var bProps = Object.getOwnPropertyNames(b);
@@ -47,9 +46,7 @@ class BoardShow extends React.Component {
         return false;
       }
     }
-
     return true;
-  
   }
   
   showMenu(e) {
@@ -76,13 +73,13 @@ class BoardShow extends React.Component {
   }
 
   render(){
-    debugger
+    // debugger
     // if (!this.props.board || !this.props.board.pins) {
     //   debugger
     //   return <div className="loader"></div>
     // }
 
-    debugger
+    // debugger
     let boardPins;
       if (this.state.boardPins) {
          boardPins = Object.values(this.state.boardPins.pins).map(pin => {
@@ -90,7 +87,7 @@ class BoardShow extends React.Component {
         });
       }
    
-    debugger
+    // debugger
     return (
     <>
     <div className="profile-container">

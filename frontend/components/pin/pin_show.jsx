@@ -22,7 +22,7 @@ class PinShow extends React.Component {
 
 
   redirect_feed() {
-    debugger
+    // debugger
     this.props.history.goBack();
   }
 
