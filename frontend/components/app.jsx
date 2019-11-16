@@ -8,11 +8,11 @@ import { Switch } from 'react-router-dom';
 import ProfileContainer from './profile/profile_container';
 import ProfileFormContainer from './profile/profile_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-// import BoardIndexContainer from './board/board_index_container';
 import PinFormContainer from './pin/pin_form_container';
 import PinIndexContainer from './pin/pin_index_container';
 import PinShowContainer from './pin/pin_show_container';
 import BoardShowContainer from './board/board_show_container';
+import Byline from './byline/byline';
 
 
 
@@ -23,6 +23,7 @@ const App = () => (
       
       <AuthRoute exact path="/" component={SplashContainer} />
       <ProtectedRoute path="/" component={NavbarContainer} />
+      <ProtectedRoute path="/" component={Byline} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/edit" component={ProfileFormContainer} />
       <ProtectedRoute exact path="/pin-builder" component={PinFormContainer} />
