@@ -17,7 +17,6 @@ class Navbar extends React.Component {
 
 
   showMenu(e) {
-    // e.preventDefault();
     e.persist();
     e.stopPropagation();
     if (e.target.className === 'nav-button' && this.state.showMenu){
@@ -29,7 +28,6 @@ class Navbar extends React.Component {
   closeMenu(e){
       if (!e.relatedTarget){
         this.setState({showMenu: false});
-
       }
   }  
   
