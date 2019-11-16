@@ -6,6 +6,10 @@
 
 ### Kimterest is a single-page application inspired by Pinterest. Users can create boards, collections that store images called "kims", which can be uploaded, and allow images to be viewed on a feed. 
 
+## Live Link
+https://kimterest.herokuapp.com
+
+
 ## Technologies
 
 * Ruby on Rails
@@ -79,7 +83,6 @@ CSS grid was used to implement the mosaic-like appearance of a Pinterest feed. I
 ![alt text](https://github.com/lisali72159/pinterestclone/blob/master/app/assets/images/feed.png)
 
 ## Future Implementations
-* Individual pin show page
 * Followers for boards and users
 * Infinity scrolling
 * Search bar
