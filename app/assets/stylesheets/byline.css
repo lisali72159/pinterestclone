@@ -1,0 +1,40 @@
+.link-buttons {
+    margin: auto;
+    padding: 4px;
+    height: 60px;
+    border: none;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#github, #linkedin, #angellist, #personalsite {
+    border: none;
+    background-color:#c9a3b2;
+    height: 50px;
+    width: 100px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#github {
+    background-color:#c9a3b2;
+}
+
+#linkedin {
+    background-color: #a3b5c9;
+}
+
+#angellist {
+    background-color: #c9bca3;
+}
+
+#personalsite {
+    background-color: #eddff5;
+}
+
+
+a {
+    zoom: 200%;
+}
