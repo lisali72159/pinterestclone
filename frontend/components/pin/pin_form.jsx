@@ -52,19 +52,6 @@ class PinForm extends React.Component {
     });
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append('pin[name]', this.state.name);
-  //   formData.append('pin[id]', this.state.id);
-  //   formData.append('pin[link_url]', this.state.name);
-  //   if (this.state.photoFile) {
-  //     formData.append('pin[photo]', this.state.photoFile);
-  //   }
-  //   this.props.createPin(formData).then(() => this.props.history.push(`/users/${this.props.user.id}/pins`))
-  //   //(alert("pin saved!"))
-  // }
-
   getBoardNames(){
     const boards = Object.values(this.props.boards).map(board => {
       return <option value={board.id}>{board.name}</option>
