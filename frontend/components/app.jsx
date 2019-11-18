@@ -29,7 +29,8 @@ const App = () => (
       <ProtectedRoute exact path="/pin-builder" component={PinFormContainer} />
       <ProtectedRoute exact path="/feed" component={PinIndexContainer} />   
       <ProtectedRoute exact path="/pins/:id" component={PinShowContainer} /> 
-      <ProtectedRoute exact path="/boards/:id" component={BoardShowContainer} /> 
+      <ProtectedRoute exact path="/boards/:id" component={BoardShowContainer} />
+      <ProtectedRoute exact path="/follows"/> 
 
 
 

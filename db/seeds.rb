@@ -10,11 +10,12 @@ User.destroy_all
 Board.destroy_all
 
 demouser = User.create!({first_name: 'Lisa', last_name: 'Li', location:'New York City', age: 24, email: "lisa@gmail.com", password: "lisalisa"})
+demouser2 = User.create!({first_name: 'Ada', last_name: 'Lovelace', location:'Los Angeles', age: 25, email: "ada@gmail.com", password:'adaadaada'})
 board1 = Board.create!({author_id: demouser.id, name: "Kimchi"})
 board2 = Board.create({author_id: demouser.id, name: "Kimonos"})
 board3 = Board.create({author_id: demouser.id, name: "Kim Possible"})
 board4 = Board.create({author_id: demouser.id, name: "Kim Kardashian"})
-board5 = Board.create({author_id: demouser.id, name: "Kimbap"})
+board5 = Board.create({author_id: demouser2.id, name: "Kimbap"})
 
 pin1 = Pin.create({author_id: demouser.id, board_id: board1.id, title:"wow kimchi", link:"google.com", description:"hola"})
 file = open('https://kim-seeds.s3.amazonaws.com/k4.jpg')
