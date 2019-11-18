@@ -13,6 +13,7 @@ class Navbar extends React.Component {
     this.redirect_profile = this.redirect_profile.bind(this);
     this.redirect_feed = this.redirect_feed.bind(this);
     this.redirect_edit = this.redirect_edit.bind(this);
+    this.redirect_follows = this.redirect_follows.bind(this);
   }
 
 
@@ -36,6 +37,10 @@ class Navbar extends React.Component {
     this.props.history.push('/');
   }
 
+  redirect_follow(){
+    this.props.history.push('/follows')
+  }
+
   redirect_profile(){
     this.props.history.push('/profile')
   }
@@ -56,7 +61,7 @@ class Navbar extends React.Component {
 
         <button className="nav-button" onClick={this.redirect_feed}>Home</button>
        
-        <button className="nav-button">Following</button>
+        <button className="nav-button" onClick={this.redirect_follow}>Following</button>
        
         <button className="nav-button" onClick={this.redirect_profile}>Profile</button>
         <div>
@@ -67,9 +72,6 @@ class Navbar extends React.Component {
         {this.state.showMenu ? (
 
           <div className="menu">
-
-            
-
             <button className="menu-buttons" onClick={this.redirect_edit}>Edit Your Profile</button>    
                 <br/>
               <button className="menu-buttons" onClick={this.redirect_signup}>Log out</button>

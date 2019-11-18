@@ -1,5 +1,6 @@
 class Follows < ApplicationRecord
-    validates :followable_id, :followable_type, presence: true
+    validates :user_id, :followable_id, :followable_type, presence: true
+    validates :user_id, uniqueness: {:scope => [:followable_type, :followable_id]}
     
     belongs_to :followable, polymorphic: true;
 
