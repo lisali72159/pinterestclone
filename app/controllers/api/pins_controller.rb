@@ -3,7 +3,6 @@ class Api::PinsController < ApplicationController
     @pin = Pin.new(pin_params)
     @pin.author_id = current_user.id
     if @pin.save
-      # render json message: "Successfully uploaded!"
       render '/api/pins/show'
     else
       render json: @pin.errors.full_messages, status: 401
@@ -12,10 +11,6 @@ class Api::PinsController < ApplicationController
 
   def show
     @pin = Pin.includes(:board, :author).find(params[:id])
-    # debugger
-    # @board = Board.find(@pin.board_id)
-    # debugger
-    # @author = User.find(@pin.author_id).first_name
     render '/api/pins/show'
   end
 
@@ -29,9 +24,6 @@ class Api::PinsController < ApplicationController
     @pin = Pin.find(params[:id])
     @board = Board.find(@pin.board_id)
     # debugger
-    # pin_params[:pin][:photo] = @pin.photo
-    # pin_params2[:pin][:board_id] = @pin.board_id
-    # pin_params2[:pin][:author_id] = @pin.author_id
     if @pin.update(pin_params)
         render 'api/pins/show'
     else
@@ -52,9 +44,7 @@ class Api::PinsController < ApplicationController
     
     params.require(:pin).permit(:author_id, :board_id, :title, :link, :description, :photo)
   end
-  # def pin_params2
-  #   params.require(:pin).permit(:title, :link, :description)
-  # end
+  
 
 
 
