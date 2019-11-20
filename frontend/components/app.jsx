@@ -31,7 +31,7 @@ const App = () => (
       <ProtectedRoute exact path="/feed" component={PinIndexContainer} />   
       <ProtectedRoute exact path="/pins/:id" component={PinShowContainer} /> 
       <ProtectedRoute exact path="/boards/:id" component={BoardShowContainer} />
-      <ProtectedRoute exact path="/hello" component={Followers} /> 
+      <ProtectedRoute exact path="/follows" component={Followers} /> 
 
     </header>
   

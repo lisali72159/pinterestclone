@@ -8,7 +8,7 @@ const entitiesReducer = combineReducers({
   users: usersReducers,
   boards: boardsReducers,
   pins: pinsReducers,
-  follows: followsReducers,
+  // follows: followsReducers,
 });
 
 export default entitiesReducer;

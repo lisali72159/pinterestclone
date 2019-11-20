@@ -1,16 +1,16 @@
 import * as SessionApiUtil from "../util/session_api_util";
 import * as UserApiUtil from "../util/user_api_util";
-import { RECEIVE_USERS } from "./user_actions";
+// import { RECEIVE_USERS } from "./user_actions";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
-const fetchAllUsers = users => ({
-  type: RECEIVE_USERS,
-  users
-})
+// const fetchAllUsers = users => ({
+//   type: RECEIVE_USERS,
+//   users
+// })
 
 const receiveCurrentUser = user => ({
   type: RECEIVE_CURRENT_USER,
