@@ -12,6 +12,8 @@ const followsReducers = (state = {}, action) => {
             newState = merge({}, state);
             delete newState[action.follow.id];
             return newState;
+        default:
+            return state;
     }
 }
 
