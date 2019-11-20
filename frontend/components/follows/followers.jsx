@@ -2,12 +2,21 @@ import React from 'react';
 
 class Followers extends React.Component {
     constructor(props) {
+        debugger
         super(props);
+        this.state = {
+
+        }
     }
 
+    // componentDidMount(){
+    //     this.props.fetchAllFollows();
+    // }
     
     render(){
-       return <h1>This should be a list of followers</h1>
+       return (
+       <h1>Followers:</h1>
+       )
     }
 }
 

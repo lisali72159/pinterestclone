@@ -5,6 +5,7 @@ const followsReducers = (state = {}, action) => {
    let newState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_FOLLOWS:
+            debugger
             return action.follows;
         case RECEIVE_FOLLOW:
             return Object.assign({}, state, {[action.follow.id]: action.follow})

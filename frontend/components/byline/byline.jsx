@@ -8,14 +8,14 @@ class Byline extends React.Component {
     
     render() {
         return (
-            <div class="link-buttons">
-                <button id="github"><a href="https://github.com/lisali72159" target="_blank"><i class="fab fa-github"></i> </a> </button>
+            <div className="link-buttons">
+                <button id="github"><a href="https://github.com/lisali72159" target="_blank"><i className="fab fa-github"></i> </a> </button>
                 
-                <button id="linkedin"><a href="https://www.linkedin.com/in/lisa-li-293a53bb/" target="_blank"><i class="fab fa-linkedin-in"></i></a></button>
+                <button id="linkedin"><a href="https://www.linkedin.com/in/lisa-li-293a53bb/" target="_blank"><i className="fab fa-linkedin-in"></i></a></button>
                 
-                <button id="angellist"><a href="https://angel.co/lisa-li-36" target="_blank"><i class="fab fa-angellist"></i></a></button>
+                <button id="angellist"><a href="https://angel.co/lisa-li-36" target="_blank"><i className="fab fa-angellist"></i></a></button>
                 
-                <button id="personalsite"><a href="https://lisali72159.github.io/personalsite/" target="_blank"><i class="fas fa-user"></i></a></button>
+                <button id="personalsite"><a href="https://lisali72159.github.io/personalsite/" target="_blank"><i className="fas fa-user"></i></a></button>
             </div>
         )
     }

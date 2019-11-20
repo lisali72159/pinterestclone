@@ -118,3 +118,11 @@ file = open('https://kim-seeds.s3.amazonaws.com/k20.jpg')
 pin20.photo.attach(io: file, filename: 'k20.jpg')
 pin20.save!
 
+follow1 = Follows.create({followable_id: demouser2.id, followable_type: 'User', user_id: demouser.id})
+follow1.save!
+
+follow2 = Follows.create({followable_id: board5.id, followable_type: 'Board', user_id: demouser.id})
+follow2.save!
+
+follow3 = Follows.create({followable_id: demouser3.id, followable_type: 'User', user_id: demouser.id})
+follow3.save!
