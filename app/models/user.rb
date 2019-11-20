@@ -17,7 +17,8 @@ class User < ApplicationRecord
   has_many :pins,
     foreign_key: :author_id
   
-  # has_many :follows, :as => :followable
+  has_many :follows, as: :followable
+  has_many :following, foreign_key: :user_id, class_name: :Follows
 
 
 
