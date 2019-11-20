@@ -38,8 +38,11 @@ class Navbar extends React.Component {
   }
 
   redirect_follow(){
+    // debugger
     this.props.history.push('/follows')
   }
+
+  // Redirect follow does not work! Even tried redirecting to profile.
 
   redirect_profile(){
     this.props.history.push('/profile')

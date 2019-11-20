@@ -13,6 +13,7 @@ import PinIndexContainer from './pin/pin_index_container';
 import PinShowContainer from './pin/pin_show_container';
 import BoardShowContainer from './board/board_show_container';
 import Byline from './byline/byline';
+import Followers from './follows/followers';
 
 
 
@@ -30,9 +31,7 @@ const App = () => (
       <ProtectedRoute exact path="/feed" component={PinIndexContainer} />   
       <ProtectedRoute exact path="/pins/:id" component={PinShowContainer} /> 
       <ProtectedRoute exact path="/boards/:id" component={BoardShowContainer} />
-      {/* <ProtectedRoute exact path="/follows" />  */}
-
-
+      <ProtectedRoute exact path="/hello" component={Followers} /> 
 
     </header>
   
