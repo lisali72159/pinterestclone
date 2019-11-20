@@ -2,7 +2,7 @@ import { RECEIVE_FOLLOWS, RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follo
 
 const followsReducers = (state = {}, action) => {
    Object.freeze(state);
-   let newState;
+   let newState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_FOLLOWS:
             return action.follows;

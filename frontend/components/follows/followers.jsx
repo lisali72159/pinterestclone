@@ -7,7 +7,7 @@ class Followers extends React.Component {
 
     
     render(){
-        <h1>This should be a list of followers</h1>
+       return <h1>This should be a list of followers</h1>
     }
 }
 
