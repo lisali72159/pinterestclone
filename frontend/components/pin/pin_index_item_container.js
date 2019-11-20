@@ -11,7 +11,8 @@ const mapDispatchToProps = dispatch => {
     editPin: () => dispatch(editPin()),
     deletePin: pinId => dispatch(deletePin(pinId)),
     openModal: (type, props) => dispatch(openModal(type, props))
-  };};
+  };
+};
 
 export default withRouter(connect(
   null,

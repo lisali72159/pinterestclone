@@ -5,8 +5,15 @@ import { fetchAllFollows, createFollow, deleteFollow } from '../../actions/follo
 
 
 const msp = state => {
-    const follows = state.entities.follows;
-    return { follows }
+    const follows = Object.values(state.entities.follows);
+    
+    let followed_users = follows.filter(follow => follow.followable_type === 'User');
+    let followed_user_ids = followed_users.map(follow => follow.followable_id);
+    
+    let followed_boards = follows.filter(follow => follow.followable_type === 'Board');
+    let followed_board_ids = followed_boards.map(follow => follow.followable_id);
+    debugger
+    return { followed_user_ids, followed_board_ids }
 }
 
 const mdp = dispatch => ({
