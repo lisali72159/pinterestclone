@@ -36,12 +36,22 @@ class FollowsIndexItem extends React.Component {
     // }
 
     renderBoard(follow) {
-        return <li>{follow.follower.name}</li>
+        return (
+        <div>
+        <li>{follow.follower.name}</li>
+        <button>Unfollow</button>
+        </div>
+        )
     }
 
     renderUser(follow) {
         let fullName = `${follow.follower.first_name} ${follow.follower.last_name}`
-        return <li>{fullName}</li>
+        return (
+        <div>
+        <li>{fullName}</li>
+        <button>Unfollow</button>
+        </div>
+        )
     }
 
     render(){
@@ -56,16 +66,17 @@ class FollowsIndexItem extends React.Component {
         })
         
         return (
-        
+
             <>
             <div>
-                <div>User:</div>
+                <div>Users:</div>
                 <ul>
                     {userInfo}
                 </ul>
+                
             </div>
             <div>
-                <div>Board:</div>
+                <div>Boards:</div>
                 <ul>
                     {boardInfo}
                 </ul>
