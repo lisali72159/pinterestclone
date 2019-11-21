@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import FollowsIndex from './follows_index';
 import { fetchAllFollows, deleteFollow } from '../../actions/follow_actions';
 
-const msp = (state, ownProps) => {
+const msp = (state) => {
     const follows = state.entities.follows;
     return { follows }
 }
