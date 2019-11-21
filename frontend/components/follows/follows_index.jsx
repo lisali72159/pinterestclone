@@ -12,15 +12,12 @@ class FollowsIndex extends React.Component {
     }
     
     render(){
-        const followsIndexItems = Object.values(this.props.follows).map(follow => {
-            return <FollowsIndexItemContainer key={follow.id} follow={follow} users={this.state.users} boards={this.state.boards}/>
-        })
        return (
         <>
        <h1>You are currently following:</h1>
        <div className="follows-index">
            <div className="follows">
-               {followsIndexItems}
+                <FollowsIndexItemContainer follow={Object.values(this.props.follows)} />
            </div>
        </div>
        </>

@@ -4,7 +4,6 @@ import { fetchAllFollows } from '../../actions/follow_actions';
 
 const msp = (state) => {
     const follows = state.entities.follows;
-
     debugger
     return { follows}
 
