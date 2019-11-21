@@ -25,7 +25,7 @@ const App = () => (
       <AuthRoute exact path="/" component={SplashContainer} />
       <ProtectedRoute path="/" component={NavbarContainer} />
       <ProtectedRoute path="/feed" component={Byline} />
-      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute exact path="/profile/:id" component={ProfileContainer} />
       <ProtectedRoute exact path="/edit" component={ProfileFormContainer} />
       <ProtectedRoute exact path="/pin-builder" component={PinFormContainer} />
       <ProtectedRoute exact path="/feed" component={PinIndexContainer} />   

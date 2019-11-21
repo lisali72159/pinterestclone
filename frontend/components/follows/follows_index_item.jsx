@@ -4,17 +4,15 @@ import React from 'react';
 class FollowsIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     followedUser: this.props.users[this.props.follow.followable_id],
-        //     followedBoard: this.props.boards[this.props.follow.followable_id],
-        // }
+     
         debugger
         // this.follow = this.follow.bind(this);
         // this.unfollow = this.unfollow.bind(this);
-        // this.redirect_profile = this.redirect_profile.bind(this);
-        // this.redirect_board = this.redirect_board.bind(this);
+        this.redirect_profile = this.redirect_profile.bind(this);
+        this.redirect_board = this.redirect_board.bind(this);
         this.renderUser = this.renderUser.bind(this);
         this.renderBoard = this.renderBoard.bind(this);
+        // this.redirect = this.redirect.bind(this);
     } 
  
     // follow(){
@@ -22,33 +20,36 @@ class FollowsIndexItem extends React.Component {
     //     this.props.createFollow(follow);
     // }
     
-    // unfollow(){
-    //     let follow = {}
-    //     this.props.deleteFollow();
-    // }
+    unfollow(){
+        this.props.deleteFollow();
+    }
 
-    // redirect_profile() {
-    //     this.props.history.push(`/profile/${id}`)
-    // }
+    redirect_profile(profileId) {
+        debugger
+        this.props.history.push(`/profile/${profileId}`)
+    }
 
-    // redirect_board() {
-    //     this.props.history.push()
-    // }
+    redirect_board(id) {
+        this.props.history.push(`/boards/${id}`)
+    }
 
     renderBoard(follow) {
+        let boardId = follow.followable_id;
         return (
         <div>
-        <li>{follow.follower.name}</li>
+        <button onClick={() => this.redirect_board(boardId)}>{follow.follower.name}</button>
         <button>Unfollow</button>
         </div>
         )
     }
 
     renderUser(follow) {
-        let fullName = `${follow.follower.first_name} ${follow.follower.last_name}`
+        let fullName = `${follow.follower.first_name} ${follow.follower.last_name}`;
+        let profileId = follow.followable_id;
+        debugger
         return (
         <div>
-        <li>{fullName}</li>
+        <button onClick={ () => this.redirect_profile(profileId)}>{fullName}</button>
         <button>Unfollow</button>
         </div>
         )
