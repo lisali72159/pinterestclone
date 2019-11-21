@@ -24,6 +24,8 @@ const msp = state => {
 
     // debugger
     // return { followed_user, followed_board }
+    debugger
+    return { state }
 }
 
 const mdp = dispatch => ({
@@ -32,4 +34,4 @@ const mdp = dispatch => ({
     createFollow: follow => dispatch(createFollow(follow)),
 })
 
-export default withRouter(connect(null, mdp)(FollowsIndexItem));
+export default withRouter(connect(msp, mdp)(FollowsIndexItem));
