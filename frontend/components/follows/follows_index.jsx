@@ -5,11 +5,22 @@ class FollowsIndex extends React.Component {
     constructor(props) {
         debugger
         super(props);
+        this.fetchAllUsers = this.fetchAllUsers.bind(this);
     }
 
     componentDidMount(){
+        debugger
+        // 
+        this.fetchAllUsers();
         this.props.fetchAllFollows();
+        // this.props.fetchAllUsers();
     }
+
+    fetchAllUsers(){
+        debugger
+        this.props.fetchAllUsers();
+    }
+
     
     render(){
        return (

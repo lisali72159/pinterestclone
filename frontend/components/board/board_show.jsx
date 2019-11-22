@@ -14,6 +14,7 @@ class BoardShow extends React.Component {
   }
 
   componentDidMount(){
+    
     this.props.fetchBoard(this.props.match.params.id).then( res => this.setState({boardPins: res}));
     this.redirect_edit = this.redirect_edit.bind(this);
     this.redirect_pin = this.redirect_pin.bind(this);

@@ -21,6 +21,9 @@ class Profile extends React.Component {
     this.redirect_pin = this.redirect_pin.bind(this);
   }
  
+  componentDidMount(){
+    this.props.fetchAllUsers();
+  }
 
   showMenu(e) {
     e.persist();

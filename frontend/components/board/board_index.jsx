@@ -25,7 +25,6 @@ class BoardIndex extends React.Component {
        
         <div className="sub-nav">
           <button className="board-button">Boards</button>
-          {/* <button className="board-button" >Pins</button> */}
         </div>
 
         <div className="boards-container">
