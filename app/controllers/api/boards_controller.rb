@@ -10,6 +10,7 @@ class Api::BoardsController < ApplicationController
   end
 
   def index
+    #Fix this part to display not only the current users board
     @boards = current_user.authored_boards
     render '/api/boards/index'
   end

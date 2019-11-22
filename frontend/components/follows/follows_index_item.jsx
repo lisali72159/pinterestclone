@@ -7,12 +7,11 @@ class FollowsIndexItem extends React.Component {
      
         debugger
         // this.follow = this.follow.bind(this);
-        // this.unfollow = this.unfollow.bind(this);
+        this.unfollow = this.unfollow.bind(this);
         this.redirect_profile = this.redirect_profile.bind(this);
         this.redirect_board = this.redirect_board.bind(this);
         this.renderUser = this.renderUser.bind(this);
         this.renderBoard = this.renderBoard.bind(this);
-        // this.redirect = this.redirect.bind(this);
     } 
  
     // follow(){
@@ -20,8 +19,9 @@ class FollowsIndexItem extends React.Component {
     //     this.props.createFollow(follow);
     // }
     
-    unfollow(){
-        this.props.deleteFollow();
+    unfollow(follow){
+        debugger
+        this.props.deleteFollow(follow.id);
     }
 
     redirect_profile(profileId) {
@@ -38,7 +38,7 @@ class FollowsIndexItem extends React.Component {
         return (
         <div>
         <button onClick={() => this.redirect_board(boardId)}>{follow.follower.name}</button>
-        <button>Unfollow</button>
+        <button onClick={() => this.unfollow(follow)}>Unfollow</button>
         </div>
         )
     }
@@ -50,7 +50,7 @@ class FollowsIndexItem extends React.Component {
         return (
         <div>
         <button onClick={ () => this.redirect_profile(profileId)}>{fullName}</button>
-        <button>Unfollow</button>
+        <button onClick={ () => this.unfollow(follow)}>Unfollow</button>
         </div>
         )
     }
