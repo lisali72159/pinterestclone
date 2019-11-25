@@ -10,8 +10,10 @@ class Api::BoardsController < ApplicationController
   end
 
   def index
-    #Fix this part to display not only the current users board
-    @boards = current_user.authored_boards
+    # debugger
+    # @user = User.find(params[:author_id])
+    @boards = Board.all
+    # debugger
     render '/api/boards/index'
   end
 

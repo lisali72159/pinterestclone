@@ -22,6 +22,7 @@ class Profile extends React.Component {
   }
  
   componentDidMount(){
+    // debugger
     this.props.fetchAllUsers();
   }
 
@@ -48,6 +49,7 @@ class Profile extends React.Component {
   }
 
   render(){
+    debugger
     return (
       <>
       <div className="profile-container">
@@ -88,7 +90,7 @@ class Profile extends React.Component {
         </div>
         
 
-        <BoardIndexContainer />
+        <BoardIndexContainer userId={this.props.user.id}/>
         
         
       </div>

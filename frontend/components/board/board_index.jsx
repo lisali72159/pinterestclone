@@ -4,19 +4,31 @@ import BoardIndexItem from './board_index_item';
 class BoardIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.filterBoards = this.filterBoards.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAllBoards();
   }
 
+  filterBoards() {
+    let userId = this.props.userId;
+    let boards = Object.values(this.props.boards);
+    debugger
+    return boards.filter(board => board.author_id === userId); 
+
+  }
+
 
   render(){
+    debugger
     if (!this.props.boards) {
       return null;
     }
-    // debugger
-    const boardIndexItems = Object.values(this.props.boards).map(board => {
+
+    let userBoards = this.filterBoards();
+    debugger
+    const boardIndexItems = userBoards.map(board => {
       return <BoardIndexItem key={board.id} board={ board } boardId={board.id}/>
     });
 
