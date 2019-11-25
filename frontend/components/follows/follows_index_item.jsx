@@ -6,7 +6,7 @@ class FollowsIndexItem extends React.Component {
         super(props);
      
         debugger
-        // this.follow = this.follow.bind(this);
+        this.follow = this.follow.bind(this);
         this.unfollow = this.unfollow.bind(this);
         this.redirect_profile = this.redirect_profile.bind(this);
         this.redirect_board = this.redirect_board.bind(this);
@@ -14,10 +14,10 @@ class FollowsIndexItem extends React.Component {
         this.renderBoard = this.renderBoard.bind(this);
     } 
  
-    // follow(){
-    //     let follow = {}
-    //     this.props.createFollow(follow);
-    // }
+    follow(){
+        let follow = {}
+        this.props.createFollow(follow);
+    }
     
     unfollow(follow){
         debugger

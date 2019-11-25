@@ -16,9 +16,10 @@ class Api::FollowsController < ApplicationController
     end
 
     def destroy
-        @follow = Follows.find_by(user_id: follow_params[:user_id], followable_id: follow_params[:followable_id], followable_type: follow_params[:followable_type])
+        @follow = Follows.find(params[:id])
         if @follow
           @follow.destroy
+          @follows = Follows.all.where(user_id: current_user.id)
           render :index
         else
           render json: ["Could not process request"], status: 401

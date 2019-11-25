@@ -10,10 +10,7 @@ class Api::BoardsController < ApplicationController
   end
 
   def index
-    # debugger
-    # @user = User.find(params[:author_id])
     @boards = Board.all
-    # debugger
     render '/api/boards/index'
   end
 

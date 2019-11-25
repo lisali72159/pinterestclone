@@ -16,10 +16,11 @@ const receiveFollow = follow => {
     }
 }
 
-const removeFollow = follow => {
+const removeFollow = followId => {
+    debugger
     return {
         type: REMOVE_FOLLOW,
-        follow
+        followId
     }
 }
 
