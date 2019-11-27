@@ -1,0 +1,77 @@
+.following-container{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ,
+    Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 13px;
+    margin: auto;
+    margin-top: 50px;
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #8e8e8e;
+    border-radius: 8px;
+    width: 70%;
+}
+
+.follow-type{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.profile-pic{
+    margin-left: 30%;
+    width: 300px;
+}
+
+
+.profile-pic > img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    justify-content: center;
+    
+}
+
+.profile-name{
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 25%;
+    text-decoration: underline;
+ 
+}
+
+.unfollow-button{
+  background-color: #e60023;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100px;
+  height: 32px;
+  margin: 10px;
+  font-size: 12px;
+  margin-left: 25%;
+}
+
+.board >img {
+    width: 150px;
+    height: 90px;
+    margin-left: 19%;
+}
+
+.board-name{
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 30%;
+    text-decoration: underline;
+}

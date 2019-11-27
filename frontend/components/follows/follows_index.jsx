@@ -10,10 +10,8 @@ class FollowsIndex extends React.Component {
 
     componentDidMount(){
         debugger
-        // 
         this.fetchAllUsers();
         this.props.fetchAllFollows();
-        // this.props.fetchAllUsers();
     }
 
     fetchAllUsers(){
@@ -25,12 +23,14 @@ class FollowsIndex extends React.Component {
     render(){
        return (
         <>
-       <h1>You are currently following:</h1>
-       <div className="follows-index">
-           <div className="follows">
-                <FollowsIndexItemContainer follow={Object.values(this.props.follows)} />
-           </div>
-       </div>
+        <div className='following-container'>
+        <div><h1>You are currently following:</h1></div>
+            <div className="follows-index">
+                <div className="follows">
+                    <FollowsIndexItemContainer follow={Object.values(this.props.follows)} />
+                </div>
+            </div>
+        </div>
        </>
        )
     }

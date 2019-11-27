@@ -37,8 +37,9 @@ class FollowsIndexItem extends React.Component {
         let boardId = follow.followable_id;
         return (
         <div>
-        <button onClick={() => this.redirect_board(boardId)}>{follow.follower.name}</button>
-        <button onClick={() => this.unfollow(follow)}>Unfollow</button>
+        <div className='board'><img src={window.bgURL}></img></div>
+        <button className="board-name" onClick={() => this.redirect_board(boardId)}>{follow.follower.name}</button>
+        <button className="unfollow-button"onClick={() => this.unfollow(follow)}>Unfollow</button>
         </div>
         )
     }
@@ -46,11 +47,13 @@ class FollowsIndexItem extends React.Component {
     renderUser(follow) {
         let fullName = `${follow.follower.first_name} ${follow.follower.last_name}`;
         let profileId = follow.followable_id;
-        debugger
+    
         return (
         <div>
-        <button onClick={ () => this.redirect_profile(profileId)}>{fullName}</button>
-        <button onClick={ () => this.unfollow(follow)}>Unfollow</button>
+        <div className='profile-pic'><img src={window.defaultpfpURL}></img></div>
+        <button className="profile-name" onClick={ () => this.redirect_profile(profileId)}>{fullName}</button>
+        <br/>
+        <button className="unfollow-button" onClick={ () => this.unfollow(follow)}>Unfollow</button>
         </div>
         )
     }
@@ -70,14 +73,14 @@ class FollowsIndexItem extends React.Component {
 
             <>
             <div>
-                <div>Users:</div>
+                <div className='follow-type'>Users</div>
                 <ul>
                     {userInfo}
                 </ul>
                 
             </div>
             <div>
-                <div>Boards:</div>
+                <div className='follow-type'>Boards</div>
                 <ul>
                     {boardInfo}
                 </ul>
