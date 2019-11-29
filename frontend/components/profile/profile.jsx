@@ -49,7 +49,7 @@ class Profile extends React.Component {
   }
 
   render(){
-    debugger
+    // debugger
     return (
       <>
       <div className="profile-container">

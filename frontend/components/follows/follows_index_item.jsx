@@ -5,7 +5,7 @@ class FollowsIndexItem extends React.Component {
     constructor(props) {
         super(props);
      
-        debugger
+        // debugger
         this.follow = this.follow.bind(this);
         this.unfollow = this.unfollow.bind(this);
         this.redirect_profile = this.redirect_profile.bind(this);
@@ -20,12 +20,12 @@ class FollowsIndexItem extends React.Component {
     }
     
     unfollow(follow){
-        debugger
+        // debugger
         this.props.deleteFollow(follow.id);
     }
 
     redirect_profile(profileId) {
-        debugger
+        // debugger
         this.props.history.push(`/profile/${profileId}`)
     }
 

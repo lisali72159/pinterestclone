@@ -4,7 +4,7 @@ import { fetchAllBoards } from '../../actions/board_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let boards = state.entities.boards;
-  debugger
+  // debugger
   return { boards }
 };
 

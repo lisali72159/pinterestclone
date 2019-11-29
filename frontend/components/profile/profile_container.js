@@ -7,9 +7,9 @@ import { fetchAllUsers, fetchUser } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
   
-  debugger
+  // debugger
   const user = state.entities.users[ownProps.match.params.id];
-  debugger
+  // debugger
   return { user };
 }
 

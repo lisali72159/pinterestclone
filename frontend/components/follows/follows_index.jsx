@@ -3,19 +3,19 @@ import FollowsIndexItemContainer from './follows_index_item_container';
 
 class FollowsIndex extends React.Component {
     constructor(props) {
-        debugger
+        // debugger
         super(props);
         this.fetchAllUsers = this.fetchAllUsers.bind(this);
     }
 
     componentDidMount(){
-        debugger
+        // debugger
         this.fetchAllUsers();
         this.props.fetchAllFollows();
     }
 
     fetchAllUsers(){
-        debugger
+        // debugger
         this.props.fetchAllUsers();
     }
 

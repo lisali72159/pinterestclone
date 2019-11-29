@@ -17,7 +17,7 @@ const receiveFollow = follow => {
 }
 
 const removeFollow = followId => {
-    debugger
+    // debugger
     return {
         type: REMOVE_FOLLOW,
         followId

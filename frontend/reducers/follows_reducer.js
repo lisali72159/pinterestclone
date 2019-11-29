@@ -6,15 +6,11 @@ const followsReducers = (state = {}, action) => {
    let newState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_FOLLOWS:
-            debugger
+            // debugger
             return action.follows;
         case RECEIVE_FOLLOW:
             return Object.assign({}, state, {[action.follow.id]: action.follow})
         case REMOVE_FOLLOW:
-            debugger
-            // newState = merge({}, state);
-            // delete newState[action.follow.id];
-            // return newState;
             return merge({}, state, action.followId);
         default:
             return state;
